@@ -9,25 +9,33 @@ A modern portfolio website showcasing my experience as a **Software Engineer in 
 ## Project Structure
 ```
 ImranPortfolio/
-├── data/
-│   └── personalData.json       ← Complete personal information, skills, projects
-├── src/
-│   ├── main.ts                ← Main TypeScript server entry point
-│   ├── Interfaces/
-│   │   └── personalDataInterface.ts  ← TypeScript interfaces
-│   └── routes/
-│       ├── homeDataRouter.ts   ← Home page data API
-│       ├── aboutDataRouter.ts  ← About page data API
-│       └── contactDatarouter.ts ← Contact page data API
-├── public/
-│   ├── css/
-│   │   └── styles.css         ← Main stylesheet
-│   └── pages/
-│       ├── index.html         ← Home page
-│       ├── about.html         ← About me page
-│       └── contact.html       ← Contact page
-├── package.json
-└── tsconfig.json
+├── .github/
+│   └── copilot-instructions.md ← GitHub Copilot configuration
+├── site/                      ← Main application directory
+│   ├── data/
+│   │   └── personalData.json  ← Complete personal information, skills, projects
+│   ├── src/
+│   │   ├── main.ts           ← Main TypeScript server entry point
+│   │   ├── Interfaces/
+│   │   │   └── personalDataInterface.ts ← TypeScript interfaces
+│   │   └── routes/
+│   │       ├── homeDataRouter.ts        ← Home page data API
+│   │       ├── aboutDataRouter.ts       ← About page data API
+│   │       └── contactDatarouter.ts     ← Contact page data API
+│   ├── public/
+│   │   ├── assets/           ← Static assets (images, icons, etc.)
+│   │   ├── css/
+│   │   │   └── styles.css    ← Main stylesheet
+│   │   └── pages/
+│   │       ├── index.html    ← Home page
+│   │       ├── about.html    ← About me page
+│   │       └── contact.html  ← Contact page
+│   └── distribution/         ← Build output directory (gitignored)
+├── node_modules/             ← Dependencies (gitignored)
+├── package.json             ← Project configuration & scripts
+├── tsconfig.json            ← TypeScript configuration
+├── .gitignore              ← Git ignore rules
+└── README.md               ← This file
 ```
 
 ## 🚀 Features
@@ -39,6 +47,8 @@ ImranPortfolio/
 - **Work Experience**: Features roles at Craftsmen Software, REVE Systems, Orangetools.com, Walton Digi-Tech
 - **Skills Section**: Comprehensive testing tools and methodologies
 - **TypeScript backend**: Express.js server with type safety
+- **GitHub Copilot Integration**: Configured with project-specific instructions in `.github/`
+- **Organized Structure**: Clean separation with all source code in `site/` directory
 
 ## 🛠️ Skills & Technologies Showcased
 
@@ -95,6 +105,12 @@ The development server runs on `http://localhost:3000` by default.
 - Home page: `http://localhost:3000/`
 - About page: `http://localhost:3000/about`
 - Contact page: `http://localhost:3000/contact`
+
+### File Locations
+- **Source code**: All TypeScript and frontend files are in the `site/` directory
+- **Personal data**: Located at `site/data/personalData.json`
+- **Static files**: HTML, CSS, and assets in `site/public/`
+- **Build output**: Compiled files go to `site/distribution/` (auto-generated)
 
 ## Technologies Used
 
