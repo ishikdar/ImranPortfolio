@@ -1,0 +1,314 @@
+{
+  "personal": {
+    "name": "Md Al Imran Shikdar",
+    "title": "Software Engineer in Test | Manual & Automation Testing",
+    "location": "Dhaka, Bangladesh",
+    "timezone": "Asia/Dhaka",
+    "timezoneDisplay": "GMT+6",
+    "email": "shikder.imran@yahoo.com",
+    "linkedin": "https://www.linkedin.com/in/ishikdar/",
+    "github": "https://github.com/ishikdar",
+    "openToRemote": true,
+    "openToRelocation": true,
+    "relocationNote": "Require Visa Sponsorship",
+    "summary": "Experienced Software Engineer in Test with 3+ years of experience in manual testing across fintech and media asset management platforms. Proven track record in ensuring software quality, identifying critical bugs, and improving testing processes. Currently expanding skills in test automation with Playwright and TypeScript. Seeking opportunities to leverage both manual testing expertise and emerging automation skills in quality assurance roles.",
+    "aboutSummary": "Software Engineer in Test with 3+ years of experience specializing in manual testing for fintech and media asset management systems. Passionate about ensuring software quality and reliability through comprehensive testing strategies. Currently learning test automation with Playwright and TypeScript to enhance testing capabilities. Open to remote work and relocation opportunities. Let's connect if you're passionate about quality assurance, testing methodologies, or enjoy discussing tech innovations! 💻",
+    "coreStrengths": ["Manual Testing", "Fintech Testing", "Media Asset Management Testing", "Bug Detection", "Test Planning", "Quality Assurance", "Playwright", "TypeScript"],
+    "availability": {
+      "notice": "2 months",
+      "relocation": "Flexible (Require Visa Sponsorship)",
+      "remote": "Open to Remote"
+    },
+
+
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/ishikdar",
+        "icon": "mdi-github",
+        "label": "Follow on GitHub"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ishikdar/",
+        "icon": "mdi-linkedin",
+        "label": "Connect on LinkedIn"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:shikder.imran@yahoo.com",
+        "icon": "mdi-email",
+        "label": "Send Email"
+      },
+      {
+        "name": "Md Al Imran Shikdar",
+        "url": "https://drive.google.com/file/d/1wljQyjKFJRYWqJSAkvl-WrovTU3eHDcs/view?usp=sharing",
+        "icon": "mdi-file-document-outline",
+        "label": "View Resume"
+      }
+    ],
+
+
+    "sourceCode": {
+      "url": "https://github.com/ishikdar/ImranPortfolio",
+      "text": "View Source",
+      "icon": "mdi-code-tags"
+    }
+  },
+
+
+
+
+
+
+  "skills": {
+    "Manual Testing": [
+      { "name": "Test Plan Writing", "proficiency": "Expert", "level": 90 },
+      { "name": "Test Case Execution", "proficiency": "Expert", "level": 95 },
+      { "name": "Bug Reporting", "proficiency": "Expert", "level": 90 },
+      { "name": "Regression Testing", "proficiency": "Expert", "level": 90 },
+      { "name": "Smoke Testing", "proficiency": "Expert", "level": 95 }
+    ],
+    "Performance Testing Tools": [
+      { "name": "JMeter", "proficiency": "Advanced", "level": 80 }
+    ],
+    "API Testing Tools": [
+      { "name": "Postman", "proficiency": "Advanced", "level": 85 },
+      { "name": "Newman", "proficiency": "Intermediate", "level": 70 }
+    ],
+    "Cloud & DevOps": [
+      { "name": "Jenkins", "proficiency": "Intermediate", "level": 70 },
+      { "name": "AWS S3", "proficiency": "Intermediate", "level": 65 },
+      { "name": "AWS CodePipeline", "proficiency": "Intermediate", "level": 65 }
+    ],
+    "Project Management Tools": [
+      { "name": "Jira", "proficiency": "Advanced", "level": 80 },
+      { "name": "ClickUp", "proficiency": "Advanced", "level": 75 },
+      { "name": "Trello", "proficiency": "Advanced", "level": 75 }
+    ],
+    "Programming Languages": [
+      { "name": "Java", "proficiency": "Intermediate", "level": 70 },
+      { "name": "JavaScript", "proficiency": "Intermediate", "level": 65 },
+      { "name": "TypeScript", "proficiency": "Beginner", "level": 50 }
+    ],
+    "Databases": [
+      { "name": "MySQL", "proficiency": "Intermediate", "level": 70 }
+    ],
+    "Mind Mapping Tools": [
+      { "name": "XMind", "proficiency": "Advanced", "level": 75 }
+    ],
+    "GUI/Tools": [
+      { "name": "BrowserStack", "proficiency": "Advanced", "level": 80 },
+      { "name": "Vysor", "proficiency": "Advanced", "level": 85 }
+    ],
+    "Version Control": [
+      { "name": "Git", "proficiency": "Advanced", "level": 80 }
+    ]
+  },
+
+
+
+
+
+  "projects": [
+    {
+      "title": "Media Asset Management Testing",
+      "description": "Comprehensive testing of media asset management systems including file upload/download functionality, metadata management, user permissions, and media processing workflows.",
+      "technologies": ["Manual Testing", "File Upload Testing", "Metadata Testing", "Permission Testing", "Workflow Testing"],
+      "url": "https://onemimir.com/",
+      "featured": true,
+      "category": "work",
+      "year": "Aug 2025-Present"
+    },
+    {
+      "title": "Fintech Application Testing",
+      "description": "Manual testing of fintech applications focusing on payment processing, transaction validation, security testing, and compliance verification. Ensured robust financial data handling and user experience.",
+      "technologies": ["Manual Testing", "Payment Testing", "Security Testing", "Regression Testing", "User Acceptance Testing"],
+      "url": "https://vfcp.bkash.com/",
+      "featured": true,
+      "category": "work",
+      "year": "Nov 2023-Jul 2025"
+    },
+    {
+      "title": "bKash Livechat Testing",
+      "description": "Comprehensive testing of bKash live chat system ensuring seamless customer support functionality. Successfully tested live chat integration with minimal production issues and conducted thorough regression testing to maintain system reliability.",
+      "technologies": ["Manual Testing", "Live Chat Testing", "Regression Testing", "API Testing", "Production Testing", "Customer Support Testing"],
+      "url": "https://www.bkash.com/",
+      "featured": true,
+      "category": "work",
+      "year": "Nov 2023-Aug 2025"
+    },
+    {
+      "title": "Test Case Project",
+      "description": "Comprehensive manual testing project involving test case creation, execution, and reporting. Created detailed test case reports, test metrics analysis, bug reports, and mind maps for better test coverage visualization.",
+      "technologies": ["Test Case Design", "Test Case Report", "Test Metrics", "Bug Report", "Mind Maps", "XMind"],
+      "url": "https://github.com/ishikdar/test-case-project",
+      "featured": true,
+      "category": "testing",
+      "year": "2024"
+    },
+    {
+      "title": "API Testing Project",
+      "description": "End-to-end API testing project implementing CRUD operations testing with comprehensive data validation, random string generation, integer validation, and API response verification using Postman and Newman.",
+      "technologies": ["Postman", "Newman", "API Testing", "CRUD Operations", "Data Validation", "Random String Testing", "Integer Validation"],
+      "url": "https://github.com/ishikdar/api-testing-project",
+      "featured": true,
+      "category": "testing",
+      "year": "2024"
+    },
+    {
+      "title": "WebAutomation Project (Selenium with JAVA)",
+      "description": "Automated web testing framework using Selenium WebDriver with Java. Implemented test cases for URL navigation, element assertions, dropdown interactions, form validations, and cross-browser compatibility testing.",
+      "technologies": ["Java", "Selenium WebDriver", "TestNG", "Maven", "Web Automation", "Cross-browser Testing"],
+      "url": "https://github.com/ishikdar/selenium-java-automation",
+      "featured": true,
+      "category": "automation",
+      "year": "2024"
+    },
+    {
+      "title": "WebAutomation Project (Cypress)",
+      "description": "Modern web automation testing suite using Cypress framework. Developed automated test cases for checkbox interactions, dropdown selections, assertions, form submissions, and end-to-end user journey testing.",
+      "technologies": ["Cypress", "JavaScript", "Web Automation", "E2E Testing", "Form Testing", "UI Validation"],
+      "url": "https://github.com/ishikdar/cypress-automation",
+      "featured": true,
+      "category": "automation",
+      "year": "2024"
+    }
+  ],
+
+
+
+
+
+
+  "workExperience": [
+    {
+      "company": "Craftsmen Software",
+      "position": "Software Engineer In Test I",
+      "subtitle": "Client: Mimir (Enterprise Media Asset Management Platform)",
+      "location": "Dhaka, Bangladesh",
+      "period": "Aug 2025 - Present",
+      "description": "Software Engineer in Test focusing on quality assurance and testing processes for enterprise applications.",
+      "achievements": [
+        "Deploy pull requests to the testing server & prepare test plans, and execute tests",
+        "Monitor AWS Code Pipeline for continuous integration and deployment processes",
+        "Monitor GitHub planning board for available pull requests to test",
+        "Collaborate with development teams to ensure quality deliverables",
+        "Execute comprehensive testing strategies for enterprise-level applications"
+      ]
+    },
+    {
+      "company": "REVE Systems",
+      "position": "Associate Software QA Engineer",
+      "subtitle": "bKash Projects",
+      "location": "Dhaka, Bangladesh",
+      "period": "Nov 2023 - Jul 2025",
+      "description": "Associate Software QA Engineer responsible for testing bKash projects and ensuring quality delivery of critical fintech applications.",
+      "achievements": [
+        "Developed comprehensive test plans and executed tests for bKash projects",
+        "Estimated project timelines and aligned requirements with cross-functional teams",
+        "Conducted extensive regression testing and documented detailed results",
+        "Tested various APIs and actively participated in deployment sessions",
+        "Successfully tested bKash live chat with minimal production issues",
+        "Identified and reported critical bugs in the bKash VFCP payment system",
+        "Led project delivery sessions for bKash live chat implementation",
+        "Ensured quality standards for high-traffic fintech applications"
+      ]
+    },
+    {
+      "company": "Orangetoolz.com",
+      "position": "Junior Software QA Engineer",
+      "subtitle": "Client: SalesType CRM Software",
+      "location": "Uttara, Dhaka",
+      "period": "Oct 2022 - Oct 2023",
+      "description": "Junior Software QA Engineer responsible for comprehensive testing of SalesType CRM software and performance optimization initiatives.",
+      "achievements": [
+        "Performed thorough manual testing of SalesType CRM software modules",
+        "Executed performance testing using JMeter and comprehensive API testing with Postman",
+        "Achieved exceptional quality with less than 5% bug leakage across various modules",
+        "Developed and maintained test documentation and reporting processes",
+        "Collaborated with development teams to ensure timely bug resolution"
+      ]
+    },
+    {
+      "company": "Walton Digi-Tech",
+      "position": "SQA Engineer Intern",
+      "subtitle": "Client: Walton Digi-Tech",
+      "location": "Gazipur, Dhaka",
+      "period": "Jan - Apr 2022",
+      "description": "SQA Engineer Intern gaining comprehensive hands-on experience in software quality assurance methodologies and mobile device testing.",
+      "achievements": [
+        "Gained foundational understanding of device testing methodologies and wrote comprehensive test cases",
+        "Conducted systematic regression testing and submitted detailed bug reports",
+        "Developed mobile UI automation testing frameworks and executed performance testing",
+        "Learned industry-standard testing tools and best practices",
+        "Contributed to quality assurance processes for consumer electronics"
+      ]
+    }
+  ],
+
+
+
+
+
+
+  "education": [
+    {
+      "institution": "University of East London",
+      "degree": "B.Sc. in Software Engineering",
+      "location": "London, UK",
+      "graduationDate": "2018",
+      "gpa": "73%",
+      "note": "In collaboration with FTMS Global College Cyberjaya, Malaysia"
+    },
+    {
+      "institution": "Lion Ferdous Alam Firoz College",
+      "degree": "Higher Secondary Certificate (2013)",
+      "location": "Tangail, Dhaka, Bangladesh",
+      "graduationDate": "2013",
+      "gpa": "4.80/5"
+    }
+  ],
+
+
+
+
+
+  "CoursesAndCertifications": [
+    {
+      "title": "Learn JMETER from Scratch on Live Apps -Performance Testing",
+      "issuer": "Udemy",
+      "date": "May 2025",
+      "url": "https://www.udemy.com/certificate/UC-16fe38a6-9008-4936-9422-82f848a846a5/"
+    },
+    {
+      "title": "Postman - Learn API Testing from Scratch with Live Projects",
+      "issuer": "Udemy",
+      "date": "Apr 2025",
+      "url": "https://www.udemy.com/certificate/UC-919cc941-052c-4d90-a557-ee9c5b86eefa/"
+    },
+    {
+      "title": "Hands-on SQA Course",
+      "issuer": "IT Training BD",
+      "date": "Jun 2023",
+      "credentialId": "ITB-B13-3335"
+    }
+  ],
+
+
+
+  "pages": {
+    "home": {
+      "title": "Hi, I'm Imran! 👋",
+      "subtitle": "Software Engineer in Test with 3+ years of experience in ensuring quality and reliability across fintech and media asset management platforms. Passionate about comprehensive testing strategies and currently learning automation with Playwright and TypeScript."
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "Software Engineer in Test passionate about ensuring software quality through comprehensive testing strategies, currently learning test automation with Playwright and TypeScript to enhance testing capabilities."
+    },
+     "contact": {
+      "title": "Contact",
+      "subtitle": "Let's connect! Open to discussing testing methodologies, quality assurance opportunities, or collaborating on software testing projects."
+    }
+  }
+}
