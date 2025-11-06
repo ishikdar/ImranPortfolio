@@ -1,50 +1,67 @@
-# Portfolio Website
+# Imran's Portfolio Website 👋
 
-A modern portfolio website built with TypeScript backend and HTML/CSS frontend that serves personal data dynamically.
+A modern portfolio website showcasing my experience as a **Software Engineer in Test** with TypeScript backend and HTML/CSS frontend that serves personal data dynamically.
+
+## About Me
+
+**Md Al Imran Shikdar** - Software Engineer in Test with 3+ years of experience in manual testing and automation across fintech and media asset management platforms. Currently learning Playwright with TypeScript for test automation.
 
 ## Project Structure
-ImranPortfolio/                 ← Your main project folder
-├── data/                       ← Data folder
-│   └── personalData.json       ← Your existing personal info file
-├── src/                        ← Source code folder (backend)
-│   ├── server.ts              ← Main server file (TypeScript)
-│   └── routes/                ← API routes folder
-│       ├── personal.ts        ← Personal info API
-│       ├── skills.ts          ← Skills API
-│       └── projects.ts        ← Projects API
-├── public/                     ← Frontend files (what users see)
-│   ├── index.html             ← Home page
-│   ├── about.html             ← About me page
-│   ├── contact.html           ← Contact page
-│   ├── css/                   ← Styling files
-│   │   ├── main.css           ← Main styles
-│   │   ├── home.css           ← Home page styles
-│   │   ├── about.css          ← About page styles
-│   │   └── contact.css        ← Contact page styles
-│   └── js/                    ← Client-side JavaScript
-│       ├── main.js            ← Common JavaScript functions
-│       ├── home.js            ← Home page functionality
-│       ├── about.js           ← About page functionality
-│       └── contact.js         ← Contact page functionality
-├── package.json               ← Project dependencies & scripts
-└── tsconfig.json              ← TypeScript configuration
+```
+ImranPortfolio/
+├── data/
+│   └── personalData.json       ← Complete personal information, skills, projects
+├── src/
+│   ├── main.ts                ← Main TypeScript server entry point
+│   ├── Interfaces/
+│   │   └── personalDataInterface.ts  ← TypeScript interfaces
+│   └── routes/
+│       ├── homeDataRouter.ts   ← Home page data API
+│       ├── aboutDataRouter.ts  ← About page data API
+│       └── contactDatarouter.ts ← Contact page data API
+├── public/
+│   ├── css/
+│   │   └── styles.css         ← Main stylesheet
+│   └── pages/
+│       ├── index.html         ← Home page
+│       ├── about.html         ← About me page
+│       └── contact.html       ← Contact page
+├── package.json
+└── tsconfig.json
+```
 
-## Features
+## 🚀 Features
 
-- **Three main sections**: Home, About Me, Contact
-- **Dynamic content**: Data loaded from personalData.json via API
-- **Responsive design**: Mobile-friendly CSS
+- **Professional Portfolio**: Showcasing 3+ years of Software Testing experience
+- **Three main sections**: Home ("Hi, I'm Imran! 👋"), About Me, Contact
+- **Dynamic content**: All data loaded from personalData.json via TypeScript API
+- **Testing Focus**: Highlights manual testing, API testing, and automation projects
+- **Work Experience**: Features roles at Craftsmen Software, REVE Systems, Orangetools.com, Walton Digi-Tech
+- **Skills Section**: Comprehensive testing tools and methodologies
 - **TypeScript backend**: Express.js server with type safety
-- **API endpoints**: RESTful API for different data sections
 
-## API Endpoints
+## 🛠️ Skills & Technologies Showcased
 
-- `GET /api/personal` - Personal information (name, title, summary, etc.)
-- `GET /api/skills` - Technical skills by category
-- `GET /api/projects` - Project portfolio
-- `GET /api/experience` - Work experience
-- `GET /api/education` - Educational background
-- `GET /api/certifications` - Certifications and achievements
+### Testing Skills
+- **Manual Testing**: Test planning, execution, bug reporting
+- **API Testing**: Postman, Newman
+- **Performance Testing**: JMeter
+- **Automation**: Cypress, Selenium WebDriver (Java)
+- **Project Management**: Jira, ClickUp, Trello
+- **CI/CD**: Jenkins
+- **Version Control**: Git
+
+### Technical Skills
+- **Programming**: Java
+- **Databases**: MySQL
+- **Tools**: BrowserStack, Vysor, XMind
+- **Currently Learning**: Playwright with TypeScript
+
+## 📋 API Endpoints
+
+- `GET /api/home` - Home page data (personal intro, core strengths)
+- `GET /api/about` - About page data (detailed background, skills, experience)
+- `GET /api/contact` - Contact information and social links
 
 ## Development
 
@@ -93,27 +110,55 @@ The development server runs on `http://localhost:3000` by default.
 - **Vanilla JavaScript** - Client-side interactivity
 - **Fetch API** - HTTP requests to backend
 
-## Data Management
+## 📊 Portfolio Content
 
-The portfolio content is managed through the `data/personalData.json` file, which contains:
-- Personal information
-- Skills and proficiencies  
-- Work experience
-- Education history
-- Projects portfolio
-- Contact details
-- Social media links
+The `data/personalData.json` file contains comprehensive information about:
 
-## Deployment
+### Personal Information
+- **Name**: Md Al Imran Shikdar
+- **Title**: Software Engineer in Test | Manual & Automation Testing
+- **Location**: Dhaka, Bangladesh
+- **Summary**: 3+ years testing experience in fintech and media asset management
 
-1. Build the project: `npm run build`
-2. Start the production server: `npm start`
-3. The application serves both API and static files
+### Work Experience
+1. **Craftsmen Software** (Aug 2025 - Present) - Software Engineer In Test I
+2. **REVE Systems** (Nov 2023 - Jul 2025) - Associate Software QA Engineer
+3. **Orangetools.com** (Oct 2022 - Oct 2023) - Junior Software QA Engineer
+4. **Walton Digi-Tech** (Jan - Apr 2022) - SQA Engineer Intern
 
-## License
+### Projects
+- **Media Asset Management Testing** - Current work project
+- **Fintech Application Testing** - Payment processing and security testing
+- **bKash Livechat Testing** - Successfully tested with minimal production issues
+- **Test Case Project** - Manual testing with comprehensive documentation
+- **API Testing Project** - CRUD operations with Postman/Newman
+- **WebAutomation Projects** - Selenium (Java) and Cypress frameworks
 
-MIT License - see package.json for details
+### Education
+- **University of East London** - B.Sc. in Software Engineering (2018)
+- **Lion Ferdous Alam Firoz College** - Higher Secondary Certificate (2013)
 
-## Author
+### Certifications
+- **Performance Testing** - Udemy (May 2025)
+- **API Testing** - Udemy (Apr 2025)
+- **Hands-on SQA & Cyber Security Course** - IT Training BD (Jun 2023)
 
-Md Al Imran Shikdar - Software Engineer in Test
+## 🚀 Deployment
+
+1. **Build the project**: `npm run build`
+2. **Start the server**: `npm start`
+3. **Access locally**: `http://localhost:3000`
+
+## 📞 Contact
+
+- **Email**: shikder.imran@yahoo.com
+- **LinkedIn**: [linkedin.com/in/ishikdar](https://www.linkedin.com/in/ishikdar/)
+- **GitHub**: [github.com/ishikdar](https://github.com/ishikdar)
+
+## 🎯 Career Objective
+
+Seeking opportunities as a **Software Engineer in Test** to leverage manual testing expertise and growing automation skills in quality assurance roles. Open to remote work and relocation opportunities (Visa sponsorship required).
+
+---
+
+**Built with ❤️ by Imran** - Showcasing 3+ years of Software Testing Excellence
