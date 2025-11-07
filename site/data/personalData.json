@@ -1,7 +1,9 @@
 {
   "personal": {
     "name": "Md Al Imran Shikdar",
+    "nickName": "Imran Shikdar",
     "title": "Software Engineer in Test | Manual & Automation Testing",
+    "shortTitle": "Software Engineer in Test",
     "location": "Dhaka, Bangladesh",
     "timezone": "Asia/Dhaka",
     "timezoneDisplay": "GMT+6",
