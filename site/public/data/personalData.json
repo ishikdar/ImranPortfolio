@@ -67,15 +67,9 @@
     "Manual Testing": [
       { "name": "Test Plan Writing"},
       { "name": "Test Case Execution"},
-      { "name": "Bug Reporting"},
       { "name": "Regression Testing"},
       { "name": "Smoke Testing"},
-      { "name": "User Acceptance Testing"},
-      { "name": "Exploratory Testing"},
-      { "name": "Cross-browser Testing"},
-      { "name": "Compatibility Testing"},
-      { "name": "Localization Testing"},
-      { "name": "Accessibility Testing"}
+      { "name": "Exploratory Testing"}
     ],
     "Performance Testing Tools": [
       { "name": "JMeter"}
