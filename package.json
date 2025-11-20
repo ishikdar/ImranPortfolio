@@ -5,11 +5,9 @@
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node site/src/main.ts",
-    "start": "node site/distribution/main.js",
-    "watch": "tsc --watch",
-    "build:static": "node scripts/build-static.js",
-    "preview:static": "cd _site && python3 -m http.server 8080"
+    "dev": "ts-node src/server.ts",
+    "start": "node dist/server.js",
+    "watch": "tsc --watch"
   },
   "keywords": ["portfolio", "typescript", "express", "web"],
   "author": "Md Al Imran Shikdar",

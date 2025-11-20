@@ -60,74 +60,17 @@ jobs:
             echo "Assets directory created"
           fi
           
-      - name: Create static build with API fallback
+      - name: Fix asset paths in HTML files
         run: |
-          echo "Creating static build with API fallback for GitHub Pages..."
-          node -e "
-          const fs = require('fs');
-          const path = require('path');
-          const data = JSON.parse(fs.readFileSync('site/public/data/personalData.json', 'utf8'));
-          
-          // Create a static data script that mimics the API
-          const staticDataScript = \`
-          // Static data for GitHub Pages (fallback when backend is not available)
-          window.STATIC_DATA = \${JSON.stringify(data, null, 2)};
-          
-          // Override fetch for API calls to use static data
-          const originalFetch = window.fetch;
-          window.fetch = function(url, options) {
-            if (url.includes('/api/home') || url.includes('/api/index')) {
-              return Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve(window.STATIC_DATA)
-              });
-            }
-            if (url.includes('/api/about')) {
-              return Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve(window.STATIC_DATA)
-              });
-            }
-            if (url.includes('/api/contact')) {
-              return Promise.resolve({
-                ok: true,
-                json: () => Promise.resolve(window.STATIC_DATA)
-              });
-            }
-            // For other URLs, use original fetch (will fail gracefully on GitHub Pages)
-            return originalFetch.apply(this, arguments).catch(() => ({
-              ok: false,
-              json: () => Promise.resolve({})
-            }));
-          };
-          
-          console.log('Static data loaded for GitHub Pages');
-          \`;
-          
-          // Write the static data script
-          fs.writeFileSync('_site/static-data.js', staticDataScript);
-          
-          // Update HTML files to include the static data script
-          const htmlFiles = ['index.html', 'home.html', 'about.html', 'contact.html'];
-          
-          htmlFiles.forEach(filename => {
-            if (fs.existsSync('_site/' + filename)) {
-              let html = fs.readFileSync('_site/' + filename, 'utf8');
-              
-              // Add static data script before other scripts
-              html = html.replace('<script', '<script src=\"static-data.js\"></script>\\n    <script');
-              
-              // If no scripts found, add before closing body tag
-              if (!html.includes('<script')) {
-                html = html.replace('</body>', '    <script src=\"static-data.js\"></script>\\n</body>');
-              }
-              
-              fs.writeFileSync('_site/' + filename, html);
-            }
-          });
-          
-          console.log('Successfully created static build with API fallback!');
-          "
+          echo "Fixing paths in HTML files..."
+          # Update CSS paths from ../css/ to css/
+          sed -i 's|../css/|css/|g' _site/*.html
+          # Update asset paths from ../assets/ to assets/
+          sed -i 's|../assets/|assets/|g' _site/*.html
+          # Update JS paths from ../js/ to js/
+          sed -i 's|../js/|js/|g' _site/*.html
+          # Update TypeScript server paths (remove backend references)
+          sed -i 's|<script type="module" src="../../distribution/main.js"></script>||g' _site/*.html
           
           
       - name: Fix asset paths in HTML files
