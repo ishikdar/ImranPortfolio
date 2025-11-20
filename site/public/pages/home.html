@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23FF0057'/><stop offset='100%' style='stop-color:%23e0004d'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23grad)'/><text x='50' y='58' font-family='Arial,sans-serif' font-size='32' font-weight='bold' text-anchor='middle' fill='white'>IS</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- ============================
+         NAVIGATION BAR
+         Top menu with logo and links
+         ============================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo on the left -->
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">IS</span>
+                    <span class="logo-text" id="logoText">Loading...</span>
+                </a>
+                
+                <!-- Navigation links on the right -->
+                <ul class="nav-links">
+                    <li><a href="home.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile menu toggle button -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================
+         HERO SECTION
+         Main profile information
+         ============================ -->
+    <section class="home-hero">
+        <div class="container">
+            <div class="home-hero-content">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <h1 class="profile-name" id="profileName">Loading...</h1>
+                    <p class="profile-title" id="profileTitle">Loading...</p>
+                </div>
+
+                <!-- Profile Info Cards -->
+                <div class="profile-info-grid">
+                    <!-- Location Card -->
+                    <div class="info-card">
+                        <span class="info-icon">📍</span>
+                        <span class="info-text" id="profileLocation">Loading...</span>
+                        <span class="info-timezone" id="profileTimeDisplay">Loading...</span>
+                    </div>
+
+                    <!-- Contact Card -->
+                    <div class="info-card">
+                        <span class="info-icon">📧</span>
+                        <a href="#" class="info-link" id="profileEmail">Loading...</a>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="info-card">
+                        <span class="info-icon">💼</span>
+                        <a href="#" target="_blank" class="info-link" id="profileLinkedIn">LinkedIn</a>
+                    </div>
+
+                    <!-- GitHub Card -->
+                    <div class="info-card">
+                        <span class="info-icon">🔗</span>
+                        <a href="#" target="_blank" class="info-link" id="profileGitHub">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="profile-actions">
+                    <button class="action-btn primary-action" id="openToRemoteBtn">
+                        <span class="btn-icon">📱</span>
+                        <span id="remoteText">Open To Remote</span>
+                    </button>
+                    <button class="action-btn secondary-action" id="relocationBtn">
+                        <span class="btn-icon">✈️</span>
+                        <span id="relocationText">Loading...</span>
+                    </button>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="profile-summary">
+                    <p id="profileSummary">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         CURRENT ROLE SECTION
+         Current job information
+         ============================ -->
+    <section class="current-role">
+        <div class="container">
+            <h2 class="section-title">Current Role</h2>
+            
+            <div class="role-card">
+                <div class="role-header">
+                    <h3 class="role-position" id="currentPosition">Loading...</h3>
+                    <span class="role-badge">Present</span>
+                </div>
+                
+                <div class="role-company">
+                    <span class="company-name" id="currentCompany">Loading...</span>
+                    <span class="role-subtitle" id="currentSubtitle">Loading...</span>
+                </div>
+                
+                <div class="role-location-period">
+                    <span class="role-location" id="currentLocation">Loading...</span>
+                    <span class="role-date" id="currentPeriod">Loading...</span>
+                </div>
+                
+                <p class="role-description" id="currentDescription">Loading...</p>
+                
+                <ul class="role-achievements" id="currentAchievements">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         CORE STRENGTHS SECTION
+         Key skills and expertise
+         ============================ -->
+    <section class="core-strengths">
+        <div class="container">
+            <h2 class="section-title">Core Strengths</h2>
+            
+            <div class="strengths-grid" id="strengthsGrid">
+                <!-- Will be populated by JavaScript -->
+                <div class="strength-badge">Manual Testing</div>
+                <div class="strength-badge">API Testing</div>
+                <div class="strength-badge">Performance Testing</div>
+                <div class="strength-badge">Test Automation</div>
+                <div class="strength-badge">CI/CD</div>
+                <div class="strength-badge">Git</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SKILLS SECTION
+         Technical skills breakdown
+         ============================ -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-container" id="skillsContainer">
+                <!-- Manual Testing Skills -->
+                <div class="skill-category" id="manualTestingSkills">
+                    <h3 class="skill-category-title" id="manualTestingTitle">Loading...</h3>
+                    <div class="skill-list" id="manualTestingList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Performance Testing Tools -->
+                <div class="skill-category" id="performanceTestingSkills">
+                    <h3 class="skill-category-title" id="performanceTestingTitle">Loading...</h3>
+                    <div class="skill-list" id="performanceTestingList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- API Testing Tools -->
+                <div class="skill-category" id="apiTestingSkills">
+                    <h3 class="skill-category-title" id="apiTestingTitle">Loading...</h3>
+                    <div class="skill-list" id="apiTestingList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category" id="cloudDevopsSkills">
+                    <h3 class="skill-category-title" id="cloudDevopsTitle">Loading...</h3>
+                    <div class="skill-list" id="cloudDevopsList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Project Management Tools -->
+                <div class="skill-category" id="projectManagementSkills">
+                    <h3 class="skill-category-title" id="projectManagementTitle">Loading...</h3>
+                    <div class="skill-list" id="projectManagementList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="skill-category" id="programmingSkills">
+                    <h3 class="skill-category-title" id="programmingTitle">Loading...</h3>
+                    <div class="skill-list" id="programmingList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category" id="databaseSkills">
+                    <h3 class="skill-category-title" id="databaseTitle">Loading...</h3>
+                    <div class="skill-list" id="databaseList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Version Control -->
+                <div class="skill-category" id="versionControlSkills">
+                    <h3 class="skill-category-title" id="versionControlTitle">Loading...</h3>
+                    <div class="skill-list" id="versionControlList">
+                        <span class="skill-item">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         FOOTER
+         Social links and copyright
+         ============================ -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Social Links -->
+                <div class="footer-social" id="footerSocial">
+                    <a href="#" target="_blank" class="social-icon" title="GitHub" id="footerGitHub">
+                        <span>🔗</span>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon" title="LinkedIn" id="footerLinkedIn">
+                        <span>💼</span>
+                    </a>
+                    <a href="#" class="social-icon" title="Email" id="footerEmail">
+                        <span>📧</span>
+                    </a>
+                </div>
+                <!-- Static Copyright -->
+                <p class="footer-text">© 2025 Md Al Imran Shikdar Portfolio. All rights reserved.</p>
+                <!-- Source Code Link -->
+                <p class="footer-link">
+                    <a href="#" target="_blank" id="sourceCodeLink">{View Source}</a>
+                </p>
+                
+                
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../../distribution/main.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23FF0057'/><stop offset='100%' style='stop-color:%23e0004d'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23grad)'/><text x='50' y='58' font-family='Arial,sans-serif' font-size='32' font-weight='bold' text-anchor='middle' fill='white'>IS</text></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Clean simple styles */
+    </style>
+</head>
+<body>
+    <!-- ============================
+         NAVIGATION BAR
+         Top menu with logo and links
+         ============================ -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo on the left -->
+                <a href="home.html" class="logo">
+                    <span class="logo-icon">IS</span>
+                    <span class="logo-text" id="logoText">Imran</span>
+                </a>
+                
+                <!-- Navigation links on the right -->
+                <ul class="nav-links">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile menu toggle button -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================
+         ABOUT HERO SECTION
+         Introduction and overview
+         ============================ -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="page-title">About</h1>
+                <div class="summary-content">
+                <p id="aboutSummary">
+                    Experienced Software Engineer in Test with 3+ years building cloud-native and secure multi-tenant cloud-based 
+                    applications, specializing in API, infrastructure, backend services, cloud native solutions, and media & 
+                    asset management (MAM) systems. Passionate about mentoring, clean code practices, and 
+                    automation. Open to remote work and relocation opportunities. Let's connect if you love tech, want to 
+                    collaborate, or enjoy empty or changing ideas! 😊
+                </p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================
+         CORE STRENGTHS SECTION
+         Key technical competencies
+         ============================ -->
+    <section class="about-strengths">
+        <div class="container">
+            <div>
+                <h2 class="section-title">Core Strengths</h2>
+            </div>
+            
+            <div class="strengths-grid-about" id="aboutStrengthsGrid">
+                <!-- Will be populated by JavaScript -->
+                <div class="strength-card">
+                    <div class="strength-icon">🔧</div>
+                    <h3>Manual Testing</h3>
+                    <p>Comprehensive test planning and execution</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🚀</div>
+                    <h3>API Testing</h3>
+                    <p>RESTful API validation and automation</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">⚡</div>
+                    <h3>Performance Testing</h3>
+                    <p>Load testing and performance optimization</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🛠️</div>
+                    <h3>Test Automation</h3>
+                    <p>Automated testing frameworks and CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         AVAILABILITY SECTION
+         Work preferences and availability
+         ============================ -->
+    <section class="availability">
+        <div class="container">
+            <div>
+                <h2 class="section-title">Availability</h2>
+            </div>
+            
+            <div class="availability-grid">
+                <!-- Notice Period -->
+                <div class="availability-card">
+                    <div class="icon">⏰</div>
+                    <h3 class="availability-title">Notice Period</h3>
+                    <p class="availability-value" id="noticePeriod">2 weeks</p>
+                </div>
+                
+                <!-- Remote Work -->
+                <div class="availability-card">
+                    <div class="icon">🌐</div>
+                    <h3 class="availability-title">Remote Work</h3>
+                    <p class="availability-value" id="remoteWork">Open to Remote</p>
+                </div>
+                
+                <!-- Relocation -->
+                <div class="availability-card">
+                    <div class="icon">✈️</div>
+                    <h3 class="availability-title">Relocation</h3>
+                    <p class="availability-value" id="relocation">Flexible (Requires Visa Sponsorship)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         WORK EXPERIENCE SECTION
+         Professional career history
+         ============================ -->
+    <section class="work-experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-timeline" id="experienceTimeline">
+                <!-- Will be populated by JavaScript -->
+                
+                <!-- Experience Item 1 - Current -->
+                <div class="experience-item" id="experience-0">
+                    <div class="experience-period" id="experience-0-period">Aug 2025 - Present</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position" id="experience-0-position">Software Engineer In Test I</h3>
+                        <h4 class="experience-company" id="experience-0-company">Craftsmen Software</h4>
+                        <p class="experience-subtitle" id="experience-0-subtitle">Client: Mimir (Enterprise Media Asset Management Platform)</p>
+                        <p class="experience-location" id="experience-0-location">Dhaka, Bangladesh</p>
+                        <p class="experience-description" id="experience-0-description">Software Engineer in Test focusing on quality assurance and testing processes for enterprise applications.</p>
+                        <ul class="experience-achievements" id="experience-0-achievements">
+                            <li>Deploy pull requests to the testing server & prepare test plans, and execute tests</li>
+                            <li>Monitor AWS Code Pipeline for continuous integration and deployment processes</li>
+                            <li>Monitor GitHub planning board for available pull requests to test</li>
+                            <li>Collaborate with development teams to ensure quality deliverables</li>
+                            <li>Execute comprehensive testing strategies for enterprise-level applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="experience-item" id="experience-1">
+                    <div class="experience-period" id="experience-1-period">Nov 2023 - Jul 2025</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position" id="experience-1-position">Associate Software QA Engineer</h3>
+                        <h4 class="experience-company" id="experience-1-company">REVE Systems</h4>
+                        <p class="experience-subtitle" id="experience-1-subtitle">bKash Projects</p>
+                        <p class="experience-location" id="experience-1-location">Dhaka, Bangladesh</p>
+                        <p class="experience-description" id="experience-1-description">Associate Software QA Engineer responsible for testing bKash projects and ensuring quality delivery of critical fintech applications.</p>
+                        <ul class="experience-achievements" id="experience-1-achievements">
+                            <li>Developed comprehensive test plans and executed tests for bKash projects</li>
+                            <li>Estimated project timelines and aligned requirements with cross-functional teams</li>
+                            <li>Conducted extensive regression testing and documented detailed results</li>
+                            <li>Tested various APIs and actively participated in deployment sessions</li>
+                            <li>Successfully tested bKash live chat with minimal production issues</li>
+                            <li>Identified and reported critical bugs in the bKash VFCP payment system</li>
+                            <li>Led project delivery sessions for bKash live chat implementation</li>
+                            <li>Ensured quality standards for high-traffic fintech applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 3 -->
+                <div class="experience-item" id="experience-2">
+                    <div class="experience-period" id="experience-2-period">Oct 2022 - Oct 2023</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position" id="experience-2-position">Junior Software QA Engineer</h3>
+                        <h4 class="experience-company" id="experience-2-company">Orangetoolz.com</h4>
+                        <p class="experience-subtitle" id="experience-2-subtitle">Client: SalesType CRM Software</p>
+                        <p class="experience-location" id="experience-2-location">Uttara, Dhaka</p>
+                        <p class="experience-description" id="experience-2-description">Junior Software QA Engineer responsible for comprehensive testing of SalesType CRM software and performance optimization initiatives.</p>
+                        <ul class="experience-achievements" id="experience-2-achievements">
+                            <li>Performed thorough manual testing of SalesType CRM software modules</li>
+                            <li>Executed performance testing using JMeter and comprehensive API testing with Postman</li>
+                            <li>Achieved exceptional quality with less than 5% bug leakage across various modules</li>
+                            <li>Developed and maintained test documentation and reporting processes</li>
+                            <li>Collaborated with development teams to ensure timely bug resolution</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 4 -->
+                <div class="experience-item" id="experience-3">
+                    <div class="experience-period" id="experience-3-period">Jan - Apr 2022</div>
+                    <div class="experience-content">
+                        <h3 class="experience-position" id="experience-3-position">SQA Engineer Intern</h3>
+                        <h4 class="experience-company" id="experience-3-company">Walton Digi-Tech</h4>
+                        <p class="experience-subtitle" id="experience-3-subtitle">Client: Walton Digi-Tech</p>
+                        <p class="experience-location" id="experience-3-location">Gazipur, Dhaka</p>
+                        <p class="experience-description" id="experience-3-description">SQA Engineer Intern gaining comprehensive hands-on experience in software quality assurance methodologies and mobile device testing.</p>
+                        <ul class="experience-achievements" id="experience-3-achievements">
+                            <li>Gained foundational understanding of device testing methodologies and wrote comprehensive test cases</li>
+                            <li>Conducted systematic regression testing and submitted detailed bug reports</li>
+                            <li>Developed mobile UI automation testing frameworks and executed performance testing</li>
+                            <li>Learned industry-standard testing tools and best practices</li>
+                            <li>Contributed to quality assurance processes for consumer electronics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         EDUCATION SECTION
+         Academic background
+         ============================ -->
+    <section class="education">
+        <div class="container">
+            <div>
+                <h2 class="section-title">Education</h2>
+            </div>
+            
+            <div class="education-grid" id="educationGrid">
+                <!-- Will be populated by JavaScript -->
+                
+                <!-- Education Item 1 -->
+                <div class="education-item" id="education-0">
+                    <div class="education-header">
+                        <div class="education-icon">🎓</div>
+                        <div>
+                            <h3 class="education-degree" id="education-0-degree">B.Sc. in Software Engineering</h3>
+                            <h4 class="education-institution" id="education-0-institution">University of East London</h4>
+                        </div>
+                    </div>
+                    <div class="education-details">
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">📍 Location</span>
+                            <p class="education-location" id="education-0-location">Cyberjaya, Malaysia</p>
+                        </div>
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">📅 Graduated</span>
+                            <p class="education-graduation" id="education-0-graduation">2018</p>
+                        </div>
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">⭐ Grade</span>
+                            <p class="education-gpa" id="education-0-gpa">GPA: 73%</p>
+                        </div>
+                    </div>
+                    <p class="education-note" id="education-0-note">In collaboration with FTMS Global College Cyberjaya, Malaysia</p>
+                </div>
+                
+                <!-- Education Item 2 -->
+                <div class="education-item" id="education-1">
+                    <div class="education-header">
+                        <div class="education-icon">📚</div>
+                        <div>
+                            <h3 class="education-degree" id="education-1-degree">Higher Secondary Certificate (2013)</h3>
+                            <h4 class="education-institution" id="education-1-institution">Lion Ferdous Alam Firoz College</h4>
+                        </div>
+                    </div>
+                    <div class="education-details">
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">📍 Location</span>
+                            <p class="education-location" id="education-1-location">Tangail, Dhaka, Bangladesh</p>
+                        </div>
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">📅 Graduated</span>
+                            <p class="education-graduation" id="education-1-graduation">2013</p>
+                        </div>
+                        <div class="education-detail-item">
+                            <span class="education-detail-label">⭐ Grade</span>
+                            <p class="education-gpa" id="education-1-gpa">GPA: 4.80/5</p>
+                        </div>
+                    </div>
+                    <p class="education-note" id="education-1-note" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         CERTIFICATIONS SECTION
+         Professional certifications
+         ============================ -->
+    <section class="certifications">
+        <div class="container">
+            <div class="certifications-header">
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            
+            <div class="certifications-grid" id="certificationsGrid">
+                <!-- Will be populated by JavaScript -->
+                
+                <!-- Certification Item 1 -->
+                <div class="certification-item" id="certification-0">
+                    <div class="certification-badge">🏆</div>
+                    <div class="certification-content">
+                        <h3 class="certification-title" id="certification-0-title">Learn JMETER from Scratch on Live Apps -Performance Testing</h3>
+                        <div class="certification-meta">
+                            <span class="certification-icon">🏢</span>
+                            <p class="certification-issuer" id="certification-0-issuer">Udemy</p>
+                        </div>
+                        <div class="certification-meta">
+                            <span class="certification-icon">📅</span>
+                            <p class="certification-date" id="certification-0-date">May 2025</p>
+                        </div>
+                    </div>
+                    <div class="certification-action">
+                        <a href="https://www.udemy.com/certificate/UC-16fe38a6-9008-4936-9422-82f848a846a5/" class="certification-link" id="certification-0-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Certification Item 2 -->
+                <div class="certification-item" id="certification-1">
+                    <div class="certification-badge">🏆</div>
+                    <div class="certification-content">
+                        <h3 class="certification-title" id="certification-1-title">Postman - Learn API Testing from Scratch with Live Projects</h3>
+                        <div class="certification-meta">
+                            <span class="certification-icon">🏢</span>
+                            <p class="certification-issuer" id="certification-1-issuer">Udemy</p>
+                        </div>
+                        <div class="certification-meta">
+                            <span class="certification-icon">📅</span>
+                            <p class="certification-date" id="certification-1-date">Apr 2025</p>
+                        </div>
+                    </div>
+                    <div class="certification-action">
+                        <a href="https://www.udemy.com/certificate/UC-919cc941-052c-4d90-a557-ee9c5b86eefa/" class="certification-link" id="certification-1-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Certification Item 3 -->
+                <div class="certification-item" id="certification-2">
+                    <div class="certification-badge">🏆</div>
+                    <div class="certification-content">
+                        <h3 class="certification-title" id="certification-2-title">Hands-on SQA Course</h3>
+                        <div class="certification-meta">
+                            <span class="certification-icon">🏢</span>
+                            <p class="certification-issuer" id="certification-2-issuer">IT Training BD</p>
+                        </div>
+                        <div class="certification-meta">
+                            <span class="certification-icon">📅</span>
+                            <p class="certification-date" id="certification-2-date">Jun 2023</p>
+                        </div>
+                    </div>
+                    <div class="certification-credential-box">
+                        <span class="credential-label">🆔 Credential ID</span>
+                        <p class="certification-credential" id="certification-2-credential">ITB-B13-3335</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         PROJECTS SECTION
+         Featured projects and work
+         ============================ -->
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Media Asset Management Testing -->
+                <div class="project-item">
+                    <h3 class="project-title">Media Asset Management Testing</h3>
+                    <p class="project-category">Work</p>
+                    <p class="project-description">
+                        Comprehensive testing of media asset management systems including file upload/download functionality, metadata management, user permissions, and media processing workflows.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Manual Testing</span>
+                        <span class="tech-tag">File Upload Testing</span>
+                        <span class="tech-tag">Metadata Testing</span>
+                        <span class="tech-tag">Permission Testing</span>
+                        <span class="tech-tag">Workflow Testing</span>
+                    </div>
+                    <a href="https://onemimir.com/" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- Fintech Application Testing -->
+                <div class="project-item">
+                    <h3 class="project-title">Fintech Application Testing</h3>
+                    <p class="project-category">Work</p>
+                    <p class="project-description">
+                        Manual testing of fintech applications focusing on payment processing, transaction validation, security testing, and compliance verification. Ensured robust financial data handling and user experience.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Manual Testing</span>
+                        <span class="tech-tag">Payment Testing</span>
+                        <span class="tech-tag">Security Testing</span>
+                        <span class="tech-tag">Regression Testing</span>
+                        <span class="tech-tag">User Acceptance Testing</span>
+                    </div>
+                    <a href="https://vfcp.bkash.com/" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- bKash Livechat Testing -->
+                <div class="project-item">
+                    <h3 class="project-title">bKash Livechat Testing</h3>
+                    <p class="project-category">Work</p>
+                    <p class="project-description">
+                        Comprehensive testing of bKash live chat system ensuring seamless customer support functionality. Successfully tested live chat integration with minimal production issues and conducted thorough regression testing to maintain system reliability.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Manual Testing</span>
+                        <span class="tech-tag">Live Chat Testing</span>
+                        <span class="tech-tag">Regression Testing</span>
+                        <span class="tech-tag">API Testing</span>
+                        <span class="tech-tag">Production Testing</span>
+                        <span class="tech-tag">Customer Support Testing</span>
+                    </div>
+                    <a href="https://www.bkash.com/" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- Test Case Project -->
+                <div class="project-item">
+                    <h3 class="project-title">Test Case Project</h3>
+                    <p class="project-category">Testing</p>
+                    <p class="project-description">
+                        Comprehensive manual testing project involving test case creation, execution, and reporting. Created detailed test case reports, test metrics analysis, bug reports, and mind maps for better test coverage visualization.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Test Case Design</span>
+                        <span class="tech-tag">Test Case Report</span>
+                        <span class="tech-tag">Test Metrics</span>
+                        <span class="tech-tag">Bug Report</span>
+                        <span class="tech-tag">Mind Maps</span>
+                        <span class="tech-tag">XMind</span>
+                    </div>
+                    <a href="https://github.com/ishikdar/test-case-project" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- API Testing Project -->
+                <div class="project-item">
+                    <h3 class="project-title">API Testing Project</h3>
+                    <p class="project-category">Testing</p>
+                    <p class="project-description">
+                        End-to-end API testing project implementing CRUD operations testing with comprehensive data validation, random string generation, integer validation, and API response verification using Postman and Newman.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">Newman</span>
+                        <span class="tech-tag">API Testing</span>
+                        <span class="tech-tag">CRUD Operations</span>
+                        <span class="tech-tag">Data Validation</span>
+                        <span class="tech-tag">Random String Testing</span>
+                        <span class="tech-tag">Integer Validation</span>
+                    </div>
+                    <a href="https://github.com/ishikdar/api-testing-project" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- WebAutomation Project (Selenium with JAVA) -->
+                <div class="project-item">
+                    <h3 class="project-title">WebAutomation Project (Selenium with JAVA)</h3>
+                    <p class="project-category">Automation</p>
+                    <p class="project-description">
+                        Automated web testing framework using Selenium WebDriver with Java. Implemented test cases for URL navigation, element assertions, dropdown interactions, form validations, and cross-browser compatibility testing.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Selenium WebDriver</span>
+                        <span class="tech-tag">TestNG</span>
+                        <span class="tech-tag">Maven</span>
+                        <span class="tech-tag">Web Automation</span>
+                        <span class="tech-tag">Cross-browser Testing</span>
+                    </div>
+                    <a href="https://github.com/ishikdar/selenium-java-automation" class="project-link" target="_blank">View Project</a>
+                </div>
+
+                <!-- WebAutomation Project (Cypress) -->
+                <div class="project-item">
+                    <h3 class="project-title">WebAutomation Project (Cypress)</h3>
+                    <p class="project-category">Automation</p>
+                    <p class="project-description">
+                        Modern web automation testing suite using Cypress framework. Developed automated test cases for checkbox interactions, dropdown selections, assertions, form submissions, and end-to-end user journey testing.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Cypress</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Web Automation</span>
+                        <span class="tech-tag">E2E Testing</span>
+                        <span class="tech-tag">Form Testing</span>
+                        <span class="tech-tag">UI Validation</span>
+                    </div>
+                    <a href="https://github.com/ishikdar/cypress-automation" class="project-link" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SKILLS OVERVIEW
+         Comprehensive skills breakdown
+         ============================ -->
+    <section class="skills-overview">
+        <div class="container">
+            <h2 class="section-title">Skills Overview</h2>
+            
+            <div class="skills-categories" id="skillsOverview">
+                <!-- Programming Languages -->
+                <div class="skill-category-block">
+                    <h3 class="category-title">Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">C/C++</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category-block">
+                    <h3 class="category-title">Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">AWS Lambda</span>
+                        <span class="skill-tag">AWS API Gateway</span>
+                        <span class="skill-tag">AWS Cognito</span>
+                        <span class="skill-tag">AWS Elastic Beanstalk</span>
+                        <span class="skill-tag">AWS CodePipeline</span>
+                        <span class="skill-tag">AWS CodeBuild</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- Testing Tools -->
+                <div class="skill-category-block">
+                    <h3 class="category-title">Testing & Quality Assurance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Newman</span>
+                        <span class="skill-tag">JMeter</span>
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Jest</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category-block">
+                    <h3 class="category-title">Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DynamoDB</span>
+                        <span class="skill-tag">OpenSearch</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         FOOTER
+         Social links and copyright
+         ============================ -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Social Links -->
+                <div class="footer-social" id="aboutFooterSocial">
+                    <a href="https://github.com/ishikdar" target="_blank" class="social-icon" title="GitHub" id="aboutFooterGitHub">
+                        <span>🔗</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ishikdar/" target="_blank" class="social-icon" title="LinkedIn" id="aboutFooterLinkedIn">
+                        <span>💼</span>
+                    </a>
+                    <a href="mailto:shikder.imran@yahoo.com" class="social-icon" title="Email" id="aboutFooterEmail">
+                        <span>📧</span>
+                    </a>
+                </div>
+                
+                <!-- Copyright -->
+                <p class="footer-text" id="aboutFooterCopyright">© 2025 Md Al Imran Shikdar. All rights reserved.</p>
+                
+                <!-- Source Code Link -->
+                <p class="footer-link">
+                    <a href="https://github.com/ishikdar/ImranPortfolio" target="_blank" id="aboutSourceCodeLink">View Source</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/about.js"></script>
+</body>
+</html>

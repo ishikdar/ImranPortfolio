@@ -8,7 +8,7 @@ This is a portfolio website project with:
 
 ## Development Guidelines
 - Use TypeScript for all backend code
-- Keep frontend simple with vanilla HTML/CSS
+- Keep frontend simple, responsive for mobile, tablet and desktop with vanilla HTML/CSS
 - Structure code with clear separation between frontend and backend
 - Use modern ES6+ features in TypeScript
 - Follow clean code practices and proper error handling
