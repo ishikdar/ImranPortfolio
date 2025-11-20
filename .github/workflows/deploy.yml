@@ -3,8 +3,7 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -28,23 +27,52 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
+      - name: Verify source files exist
+        run: |
+          echo "Checking source files..."
+          ls -la site/public/pages/
+          ls -la site/public/css/
+          ls -la site/public/assets/ || echo "Assets directory not found"
+          ls -la site/public/js/
+          ls -la site/public/data/
+          
       - name: Copy files to build directory
         run: |
           mkdir -p _site
+          echo "Copying HTML pages..."
           cp -r site/public/pages/* _site/
+          echo "Copying CSS..."
           cp -r site/public/css _site/
-          cp -r site/public/assets _site/
+          echo "Copying JS..."
           cp -r site/public/js _site/
+          echo "Copying data..."
           cp -r site/public/data _site/
+          echo "Copying assets..."
+          if [ -d "site/public/assets" ]; then
+            cp -r site/public/assets _site/
+          else
+            mkdir -p _site/assets
+            echo "Assets directory created"
+          fi
           
       - name: Fix asset paths in HTML files
         run: |
+          echo "Fixing paths in HTML files..."
           # Update CSS paths from ../css/ to css/
           sed -i 's|../css/|css/|g' _site/*.html
           # Update asset paths from ../assets/ to assets/
           sed -i 's|../assets/|assets/|g' _site/*.html
           # Update JS paths from ../js/ to js/
           sed -i 's|../js/|js/|g' _site/*.html
+          # Update TypeScript server paths (remove backend references)
+          sed -i 's|<script type="module" src="../../distribution/main.js"></script>||g' _site/*.html
+          
+      - name: List final build directory
+        run: |
+          echo "Final build directory contents:"
+          ls -la _site/
+          echo "HTML files:"
+          ls -la _site/*.html
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
