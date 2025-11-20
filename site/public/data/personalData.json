@@ -65,46 +65,52 @@
 
   "skills": {
     "Manual Testing": [
-      { "name": "Test Plan Writing", "proficiency": "Expert", "level": 90 },
-      { "name": "Test Case Execution", "proficiency": "Expert", "level": 95 },
-      { "name": "Bug Reporting", "proficiency": "Expert", "level": 90 },
-      { "name": "Regression Testing", "proficiency": "Expert", "level": 90 },
-      { "name": "Smoke Testing", "proficiency": "Expert", "level": 95 }
+      { "name": "Test Plan Writing"},
+      { "name": "Test Case Execution"},
+      { "name": "Bug Reporting"},
+      { "name": "Regression Testing"},
+      { "name": "Smoke Testing"},
+      { "name": "User Acceptance Testing"},
+      { "name": "Exploratory Testing"},
+      { "name": "Cross-browser Testing"},
+      { "name": "Compatibility Testing"},
+      { "name": "Localization Testing"},
+      { "name": "Accessibility Testing"}
     ],
     "Performance Testing Tools": [
-      { "name": "JMeter", "proficiency": "Advanced", "level": 80 }
+      { "name": "JMeter"}
     ],
     "API Testing Tools": [
-      { "name": "Postman", "proficiency": "Advanced", "level": 85 },
-      { "name": "Newman", "proficiency": "Intermediate", "level": 70 }
+      { "name": "Postman"},
+      { "name": "Newman"}
     ],
     "Cloud & DevOps": [
-      { "name": "Jenkins", "proficiency": "Intermediate", "level": 70 },
-      { "name": "AWS S3", "proficiency": "Intermediate", "level": 65 },
-      { "name": "AWS CodePipeline", "proficiency": "Intermediate", "level": 65 }
+      { "name": "Jenkins"},
+      { "name": "AWS S3"},
+      { "name": "AWS CodePipeline"}
     ],
     "Project Management Tools": [
-      { "name": "Jira", "proficiency": "Advanced", "level": 80 },
-      { "name": "ClickUp", "proficiency": "Advanced", "level": 75 },
-      { "name": "Trello", "proficiency": "Advanced", "level": 75 }
+      { "name": "Jira"},
+      { "name": "ClickUp"},
+      { "name": "Trello"}
     ],
     "Programming Languages": [
-      { "name": "Java", "proficiency": "Intermediate", "level": 70 },
-      { "name": "JavaScript", "proficiency": "Intermediate", "level": 65 },
-      { "name": "TypeScript", "proficiency": "Beginner", "level": 50 }
+      { "name": "Java"},
+      { "name": "JavaScript"},
+      { "name": "TypeScript"}
     ],
     "Databases": [
-      { "name": "MySQL", "proficiency": "Intermediate", "level": 70 }
+      { "name": "MySQL"}
     ],
     "Mind Mapping Tools": [
-      { "name": "XMind", "proficiency": "Advanced", "level": 75 }
+      { "name": "XMind"}
     ],
     "GUI/Tools": [
-      { "name": "BrowserStack", "proficiency": "Advanced", "level": 80 },
-      { "name": "Vysor", "proficiency": "Advanced", "level": 85 }
+      { "name": "BrowserStack"},
+      { "name": "Vysor"}
     ],
     "Version Control": [
-      { "name": "Git", "proficiency": "Advanced", "level": 80 }
+      { "name": "Git"}
     ]
   },
 
