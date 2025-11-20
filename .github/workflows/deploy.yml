@@ -1,0 +1,54 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Copy files to build directory
+        run: |
+          mkdir -p _site
+          cp -r site/public/pages/* _site/
+          cp -r site/public/css _site/
+          cp -r site/public/assets _site/
+          cp -r site/public/js _site/
+          cp -r site/public/data _site/
+          
+      - name: Fix asset paths in HTML files
+        run: |
+          # Update CSS paths from ../css/ to css/
+          sed -i 's|../css/|css/|g' _site/*.html
+          # Update asset paths from ../assets/ to assets/
+          sed -i 's|../assets/|assets/|g' _site/*.html
+          # Update JS paths from ../js/ to js/
+          sed -i 's|../js/|js/|g' _site/*.html
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
