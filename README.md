@@ -1,10 +1,10 @@
-# Imran's Portfolio Website 👋
+# Imran's Portfolio Website �
 
-A modern portfolio website showcasing my experience as a **Software Engineer in Test** with TypeScript backend and HTML/CSS frontend that serves personal data dynamically.
+A modern, fully responsive portfolio website showcasing my experience as a **Software Engineer in Test** with a TypeScript backend and clean HTML/CSS frontend. Features dynamic content loading, professional design, and optimal user experience across all devices.
 
 ## About Me
 
-**Md Al Imran Shikdar** - Software Engineer in Test with 3+ years of experience in manual testing and automation across fintech and media asset management platforms. Currently learning Playwright with TypeScript for test automation.
+**Md Al Imran Shikdar** - Software Engineer in Test with 3+ years of experience in manual testing and automation across fintech and media asset management platforms. Currently learning Playwright with TypeScript for test automation. Passionate about quality assurance, API testing, and creating robust testing frameworks.
 
 ## Project Structure
 ```
@@ -12,27 +12,33 @@ ImranPortfolio/
 ├── .github/
 │   └── copilot-instructions.md ← GitHub Copilot configuration
 ├── site/                      ← Main application directory
-│   ├── data/
-│   │   └── personalData.json  ← Complete personal information, skills, projects
 │   ├── src/
 │   │   ├── main.ts           ← Main TypeScript server entry point
-│   │   ├── Interfaces/
-│   │   │   └── personalDataInterface.ts ← TypeScript interfaces
-│   │   └── routes/
-│   │       ├── homeDataRouter.ts        ← Home page data API
-│   │       ├── aboutDataRouter.ts       ← About page data API
-│   │       └── contactDatarouter.ts     ← Contact page data API
+│   │   ├── dataLoader/
+│   │   │   └── dataLoader.ts ← Data loading utilities
+│   │   └── services/
+│   │       ├── indexService.ts   ← Home page service
+│   │       ├── aboutService.ts   ← About page service
+│   │       └── contactService.ts ← Contact page service
 │   ├── public/
+│   │   ├── data/
+│   │   │   └── personalData.json ← Complete personal information, skills, projects
 │   │   ├── assets/           ← Static assets (images, icons, etc.)
 │   │   ├── css/
-│   │   │   └── styles.css    ← Main stylesheet
+│   │   │   └── styles.css    ← Main responsive stylesheet
+│   │   ├── js/
+│   │   │   ├── home.js       ← Home page JavaScript
+│   │   │   ├── about.js      ← About page JavaScript
+│   │   │   └── contact.js    ← Contact page JavaScript
 │   │   └── pages/
-│   │       ├── index.html    ← Home page
+│   │       ├── index.html    ← Landing page
+│   │       ├── home.html     ← Home page
 │   │       ├── about.html    ← About me page
 │   │       └── contact.html  ← Contact page
 │   └── distribution/         ← Build output directory (gitignored)
 ├── node_modules/             ← Dependencies (gitignored)
 ├── package.json             ← Project configuration & scripts
+├── package-lock.json        ← Dependency lock file
 ├── tsconfig.json            ← TypeScript configuration
 ├── .gitignore              ← Git ignore rules
 └── README.md               ← This file
@@ -40,15 +46,31 @@ ImranPortfolio/
 
 ## 🚀 Features
 
+### Core Functionality
 - **Professional Portfolio**: Showcasing 3+ years of Software Testing experience
 - **Three main sections**: Home ("Hi, I'm Imran! 👋"), About Me, Contact
-- **Dynamic content**: All data loaded from personalData.json via TypeScript API
-- **Testing Focus**: Highlights manual testing, API testing, and automation projects
-- **Work Experience**: Features roles at Craftsmen Software, REVE Systems, Orangetools.com, Walton Digi-Tech
-- **Skills Section**: Comprehensive testing tools and methodologies
-- **TypeScript backend**: Express.js server with type safety
-- **GitHub Copilot Integration**: Configured with project-specific instructions in `.github/`
-- **Organized Structure**: Clean separation with all source code in `site/` directory
+- **Dynamic Content Loading**: All data served from personalData.json via TypeScript API
+- **TypeScript Backend**: Express.js server with complete type safety
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+
+### Design & User Experience
+- **Modern UI/UX**: Clean, professional design with gradient accents and hover effects
+- **Fully Responsive**: CSS Grid/Flexbox layouts with mobile-first approach
+- **Cross-device Compatibility**: Consistent experience on all screen sizes (480px-1440px+)
+- **Optimized Performance**: External CSS, minimal JavaScript, fast loading times
+- **Professional Styling**: Left-aligned sections, consistent typography, modern card layouts
+
+### Content Highlights
+- **Work Experience Timeline**: Clean, professional experience presentation
+- **Skills & Certifications**: Organized display of technical competencies
+- **Project Showcase**: Testing projects with detailed descriptions
+- **Contact Information**: Professional contact methods and availability status
+- **Areas of Interest**: 4-card responsive grid showcasing specializations
+
+### Technical Excellence
+- **GitHub Copilot Integration**: Configured with project-specific instructions
+- **Clean Architecture**: Organized separation between backend, frontend, and data
+- **Modern Development**: ES6+, TypeScript, and best practices throughout
 
 ## 🛠️ Skills & Technologies Showcased
 
@@ -66,12 +88,6 @@ ImranPortfolio/
 - **Databases**: MySQL
 - **Tools**: BrowserStack, Vysor, XMind
 - **Currently Learning**: Playwright with TypeScript
-
-## 📋 API Endpoints
-
-- `GET /api/home` - Home page data (personal intro, core strengths)
-- `GET /api/about` - About page data (detailed background, skills, experience)
-- `GET /api/contact` - Contact information and social links
 
 ## Development
 
@@ -121,10 +137,11 @@ The development server runs on `http://localhost:3000` by default.
 - **CORS** - Cross-origin resource sharing
 
 ### Frontend
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Flexbox/Grid
-- **Vanilla JavaScript** - Client-side interactivity
-- **Fetch API** - HTTP requests to backend
+- **HTML5** - Semantic markup with accessibility in mind
+- **CSS3** - Modern responsive styling with CSS Grid/Flexbox
+- **Responsive Design** - Mobile-first approach with breakpoints (480px, 768px, 1024px)
+- **Vanilla JavaScript** - Clean client-side interactivity and dynamic content loading
+- **Fetch API** - Async HTTP requests to TypeScript backend
 
 ## 📊 Portfolio Content
 
@@ -159,11 +176,32 @@ The `data/personalData.json` file contains comprehensive information about:
 - **API Testing** - Udemy (Apr 2025)
 - **Hands-on SQA & Cyber Security Course** - IT Training BD (Jun 2023)
 
+## ✨ Recent Updates
+
+### UI/UX Improvements (November 2025)
+- **Fully Responsive Design**: Complete mobile-first redesign with optimized layouts
+- **Consistent Typography**: Standardized section titles (28px) across all pages
+- **Enhanced About Page**: 
+  - Core Strengths: 4-card responsive grid layout
+  - Availability: 3-card optimized display
+  - Education: 2-card clean presentation  
+  - Certifications: 3-card responsive grid with proper badge positioning
+- **Contact Page Optimization**: Areas of Interest section now displays all 4 cards in one row on desktop
+- **CSS Architecture**: Migration from inline styles to external CSS for better maintainability
+- **Cross-device Testing**: Verified compatibility across desktop, tablet, and mobile breakpoints
+
+### Technical Enhancements
+- **Clean Code**: Removed all hardcoded inline styles in favor of CSS classes
+- **Performance**: Optimized CSS with proper inheritance and reduced redundancy
+- **Accessibility**: Improved semantic HTML structure and consistent styling patterns
+- **Maintainability**: Centralized styling in external CSS files with organized structure
+
 ## 🚀 Deployment
 
 1. **Build the project**: `npm run build`
 2. **Start the server**: `npm start`
 3. **Access locally**: `http://localhost:3000`
+4. **Test responsiveness**: Verify layouts on different screen sizes
 
 ## 📞 Contact
 
@@ -175,6 +213,20 @@ The `data/personalData.json` file contains comprehensive information about:
 
 Seeking opportunities as a **Software Engineer in Test** to leverage manual testing expertise and growing automation skills in quality assurance roles. Open to remote work and relocation opportunities (Visa sponsorship required).
 
+## 📱 Responsive Breakpoints
+
+- **Desktop**: 1024px+ (4-card grids, full layouts)
+- **Tablet**: 768px-1024px (2-card grids, adapted layouts)  
+- **Mobile**: 480px-768px (single column, optimized spacing)
+- **Small Mobile**: <480px (minimal padding, stacked layouts)
+
+## 🎨 Design System
+
+- **Color Scheme**: Professional gradient (FF0057 to e0004d) with black typography
+- **Typography**: Consistent font sizes, left-aligned titles, clean hierarchy
+- **Layout**: CSS Grid/Flexbox responsive patterns throughout
+- **Interactions**: Smooth hover effects, transform animations, professional transitions
+
 ---
 
-**Built with ❤️ by Imran** - Showcasing 3+ years of Software Testing Excellence
+**Built with ❤️ by Imran** - A Modern, Responsive Portfolio Showcasing 3+ Years of Software Testing Excellence
