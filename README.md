@@ -44,51 +44,6 @@ ImranPortfolio/
 └── README.md               ← This file
 ```
 
-## 🚀 Features
-
-### Core Functionality
-- **Professional Portfolio**: Showcasing 3+ years of Software Testing experience
-- **Three main sections**: Home ("Hi, I'm Imran! 👋"), About Me, Contact
-- **Dynamic Content Loading**: All data served from personalData.json via TypeScript API
-- **TypeScript Backend**: Express.js server with complete type safety
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-
-### Design & User Experience
-- **Modern UI/UX**: Clean, professional design with gradient accents and hover effects
-- **Fully Responsive**: CSS Grid/Flexbox layouts with mobile-first approach
-- **Cross-device Compatibility**: Consistent experience on all screen sizes (480px-1440px+)
-- **Optimized Performance**: External CSS, minimal JavaScript, fast loading times
-- **Professional Styling**: Left-aligned sections, consistent typography, modern card layouts
-
-### Content Highlights
-- **Work Experience Timeline**: Clean, professional experience presentation
-- **Skills & Certifications**: Organized display of technical competencies
-- **Project Showcase**: Testing projects with detailed descriptions
-- **Contact Information**: Professional contact methods and availability status
-- **Areas of Interest**: 4-card responsive grid showcasing specializations
-
-### Technical Excellence
-- **GitHub Copilot Integration**: Configured with project-specific instructions
-- **Clean Architecture**: Organized separation between backend, frontend, and data
-- **Modern Development**: ES6+, TypeScript, and best practices throughout
-
-## 🛠️ Skills & Technologies Showcased
-
-### Testing Skills
-- **Manual Testing**: Test planning, execution, bug reporting
-- **API Testing**: Postman, Newman
-- **Performance Testing**: JMeter
-- **Automation**: Cypress, Selenium WebDriver (Java)
-- **Project Management**: Jira, ClickUp, Trello
-- **CI/CD**: Jenkins
-- **Version Control**: Git
-
-### Technical Skills
-- **Programming**: Java
-- **Databases**: MySQL
-- **Tools**: BrowserStack, Vysor, XMind
-- **Currently Learning**: Playwright with TypeScript
-
 ## Development
 
 ### Prerequisites
