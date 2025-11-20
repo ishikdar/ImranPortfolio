@@ -60,65 +60,73 @@ jobs:
             echo "Assets directory created"
           fi
           
-      - name: Pre-populate HTML with data
+      - name: Create static build with API fallback
         run: |
-          echo "Pre-populating HTML files with static data..."
+          echo "Creating static build with API fallback for GitHub Pages..."
           node -e "
           const fs = require('fs');
           const path = require('path');
           const data = JSON.parse(fs.readFileSync('site/public/data/personalData.json', 'utf8'));
           
-          // Update index.html (landing page)
-          let indexHtml = fs.readFileSync('_site/index.html', 'utf8');
-          indexHtml = indexHtml.replace('id=\"heroName\">Loading...</h1>', 'id=\"heroName\">' + data.personal.name + '</h1>');
-          indexHtml = indexHtml.replace('id=\"heroRole\">Loading...</span>', 'id=\"heroRole\">' + data.personal.shortTitle + '</span>');
-          fs.writeFileSync('_site/index.html', indexHtml);
+          // Create a static data script that mimics the API
+          const staticDataScript = \`
+          // Static data for GitHub Pages (fallback when backend is not available)
+          window.STATIC_DATA = \${JSON.stringify(data, null, 2)};
           
-          // Update home.html with comprehensive data
-          let homeHtml = fs.readFileSync('_site/home.html', 'utf8');
-          
-          // Basic profile info
-          homeHtml = homeHtml.replace('id=\"logoText\">Loading...</span>', 'id=\"logoText\">' + data.personal.nickName + '</span>');
-          homeHtml = homeHtml.replace('id=\"profileName\">Loading...</h1>', 'id=\"profileName\">' + data.personal.name + '</h1>');
-          homeHtml = homeHtml.replace('id=\"profileTitle\">Loading...</p>', 'id=\"profileTitle\">' + data.personal.shortTitle + '</p>');
-          homeHtml = homeHtml.replace('id=\"profileLocation\">Loading...</span>', 'id=\"profileLocation\">' + data.personal.location + '</span>');
-          homeHtml = homeHtml.replace('id=\"profileTimeDisplay\">Loading...</span>', 'id=\"profileTimeDisplay\">(' + data.personal.timezoneDisplay + ')</span>');
-          homeHtml = homeHtml.replace('id=\"profileEmail\">Loading...</a>', 'id=\"profileEmail\">' + data.personal.email + '</a>');
-          homeHtml = homeHtml.replace('href=\"#\"', 'href=\"mailto:' + data.personal.email + '\"');
-          homeHtml = homeHtml.replace('id=\"relocationText\">Loading...</span>', 'id=\"relocationText\">' + data.personal.availability.relocation + '</span>');
-          homeHtml = homeHtml.replace('id=\"profileSummary\">Loading...</p>', 'id=\"profileSummary\">' + data.personal.summary + '</p>');
-          
-          // Current role information
-          if (data.experience && data.experience.length > 0) {
-            const currentJob = data.experience[0];
-            homeHtml = homeHtml.replace('id=\"currentPosition\">Loading...</h3>', 'id=\"currentPosition\">' + currentJob.position + '</h3>');
-            homeHtml = homeHtml.replace('id=\"currentCompany\">Loading...</span>', 'id=\"currentCompany\">' + currentJob.company + '</span>');
-            homeHtml = homeHtml.replace('id=\"currentSubtitle\">Loading...</span>', 'id=\"currentSubtitle\">' + currentJob.location + '</span>');
-            homeHtml = homeHtml.replace('id=\"currentLocation\">Loading...</span>', 'id=\"currentLocation\">' + currentJob.location + '</span>');
-            homeHtml = homeHtml.replace('id=\"currentPeriod\">Loading...</span>', 'id=\"currentPeriod\">' + currentJob.period + '</span>');
-            homeHtml = homeHtml.replace('id=\"currentDescription\">Loading...</p>', 'id=\"currentDescription\">' + currentJob.description + '</p>');
-          }
-          
-          // Skills section
-          if (data.skills) {
-            // Manual Testing skills
-            if (data.skills.manualTesting) {
-              homeHtml = homeHtml.replace('id=\"manualTestingTitle\">Loading...</h3>', 'id=\"manualTestingTitle\">Manual Testing</h3>');
-              const manualSkills = data.skills.manualTesting.map(skill => '<span class=\"skill-item\">' + skill + '</span>').join('');
-              homeHtml = homeHtml.replace('<span class=\"skill-item\">Loading...</span>', manualSkills);
+          // Override fetch for API calls to use static data
+          const originalFetch = window.fetch;
+          window.fetch = function(url, options) {
+            if (url.includes('/api/home') || url.includes('/api/index')) {
+              return Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve(window.STATIC_DATA)
+              });
             }
-            
-            // Performance Testing skills  
-            if (data.skills.performanceTesting) {
-              homeHtml = homeHtml.replace('id=\"performanceTestingTitle\">Loading...</h3>', 'id=\"performanceTestingTitle\">Performance Testing</h3>');
-              const perfSkills = data.skills.performanceTesting.map(skill => '<span class=\"skill-item\">' + skill + '</span>').join('');
-              homeHtml = homeHtml.replace(/<span class=\"skill-item\">Loading\.\.\.<\/span>/g, perfSkills);
+            if (url.includes('/api/about')) {
+              return Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve(window.STATIC_DATA)
+              });
             }
-          }
+            if (url.includes('/api/contact')) {
+              return Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve(window.STATIC_DATA)
+              });
+            }
+            // For other URLs, use original fetch (will fail gracefully on GitHub Pages)
+            return originalFetch.apply(this, arguments).catch(() => ({
+              ok: false,
+              json: () => Promise.resolve({})
+            }));
+          };
           
-          fs.writeFileSync('_site/home.html', homeHtml);
+          console.log('Static data loaded for GitHub Pages');
+          \`;
           
-          console.log('Successfully pre-populated HTML files with static data!');
+          // Write the static data script
+          fs.writeFileSync('_site/static-data.js', staticDataScript);
+          
+          // Update HTML files to include the static data script
+          const htmlFiles = ['index.html', 'home.html', 'about.html', 'contact.html'];
+          
+          htmlFiles.forEach(filename => {
+            if (fs.existsSync('_site/' + filename)) {
+              let html = fs.readFileSync('_site/' + filename, 'utf8');
+              
+              // Add static data script before other scripts
+              html = html.replace('<script', '<script src=\"static-data.js\"></script>\\n    <script');
+              
+              // If no scripts found, add before closing body tag
+              if (!html.includes('<script')) {
+                html = html.replace('</body>', '    <script src=\"static-data.js\"></script>\\n</body>');
+              }
+              
+              fs.writeFileSync('_site/' + filename, html);
+            }
+          });
+          
+          console.log('Successfully created static build with API fallback!');
           "
           
           
