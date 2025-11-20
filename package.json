@@ -2,10 +2,11 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "Portfolio website with TypeScript backend and HTML/CSS frontend",
+  "type": "module",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node src/server.ts",
+    "build": "tsc --project tsconfig.server.json && tsc --project tsconfig.site.json",
+    "dev": "ts-node --esm src/server.ts",
     "start": "node dist/server.js",
     "watch": "tsc --watch"
   },

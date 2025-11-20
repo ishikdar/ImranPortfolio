@@ -1,0 +1,195 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index e8710a0..b87437d 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -40,6 +40,13 @@ jobs:
+         uses: actions/setup-node@v4
+         with:
+           node-version: '18'
++      
++      - name: Install dependencies and build TypeScript
++        run: |
++          npm install
++          npm run build
++          echo "TypeScript compiled successfully"
++          ls -la site/distribution/
+           
+       - name: Copy files to build directory
+         run: |
+@@ -52,6 +59,8 @@ jobs:
+           cp -r site/public/js _site/
+           echo "Copying data..."
+           cp -r site/public/data _site/
++          echo "Copying compiled TypeScript (distribution)..."
++          cp -r site/distribution _site/
+           echo "Copying assets..."
+           if [ -d "site/public/assets" ]; then
+             cp -r site/public/assets _site/
+@@ -69,21 +78,8 @@ jobs:
+           sed -i 's|../assets/|assets/|g' _site/*.html
+           # Update JS paths from ../js/ to js/
+           sed -i 's|../js/|js/|g' _site/*.html
+-          # Update TypeScript server paths (remove backend references)
+-          sed -i 's|<script type="module" src="../../distribution/main.js"></script>||g' _site/*.html
+-          
+-          
+-      - name: Fix asset paths in HTML files
+-        run: |
+-          echo "Fixing paths in HTML files..."
+-          # Update CSS paths from ../css/ to css/
+-          sed -i 's|../css/|css/|g' _site/*.html
+-          # Update asset paths from ../assets/ to assets/
+-          sed -i 's|../assets/|assets/|g' _site/*.html
+-          # Update JS paths from ../js/ to js/
+-          sed -i 's|../js/|js/|g' _site/*.html
+-          # Update TypeScript server paths (remove backend references)
+-          sed -i 's|<script type="module" src="../../distribution/main.js"></script>||g' _site/*.html
++          # Fix TypeScript distribution path from ../../distribution/ to distribution/
++          sed -i 's|../../distribution/|distribution/|g' _site/*.html
+           
+       - name: List final build directory
+         run: |
+@@ -97,4 +93,4 @@ jobs:
+         
+       - name: Deploy to GitHub Pages
+         id: deployment
+-        uses: actions/deploy-pages@v4
+\ No newline at end of file
++        uses: actions/deploy-pages@v4
+diff --git a/package.json b/package.json
+index 6a2de44..7aa975b 100644
+--- a/package.json
++++ b/package.json
+@@ -2,10 +2,11 @@
+   "name": "portfolio-website",
+   "version": "1.0.0",
+   "description": "Portfolio website with TypeScript backend and HTML/CSS frontend",
++  "type": "module",
+   "main": "dist/server.js",
+   "scripts": {
+-    "build": "tsc",
+-    "dev": "ts-node src/server.ts",
++    "build": "tsc --project tsconfig.server.json && tsc --project tsconfig.site.json",
++    "dev": "ts-node --esm src/server.ts",
+     "start": "node dist/server.js",
+     "watch": "tsc --watch"
+   },
+@@ -23,4 +24,4 @@
+     "ts-node": "^10.9.1",
+     "typescript": "^5.1.6"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/site/src/main.ts b/site/src/main.ts
+index a1c85fd..5c8f4df 100644
+--- a/site/src/main.ts
++++ b/site/src/main.ts
+@@ -52,7 +52,15 @@ class PortfolioApp {
+     try {
+       
+       // Load data and update all page elements
+-      await this.indexService.loadAndRenderIndexPage('../data/personalData.json');
++      // Detect environment and use appropriate path
++      let dataPath = '/data/personalData.json';
++      
++      // Check if running on GitHub Pages
++      if (window.location.hostname.includes('github.io')) {
++        dataPath = '/ImranPortfolio/data/personalData.json';
++      }
++      
++      await this.indexService.loadAndRenderIndexPage(dataPath);
+       
+     } catch (error) {
+       console.log('❌ Home page failed to load:', error);
+@@ -112,4 +120,4 @@ function initializeWhenReady(): void {
+ }
+ 
+ // Start everything
+-initializeWhenReady();
+\ No newline at end of file
++initializeWhenReady();
+diff --git a/src/server.ts b/src/server.ts
+new file mode 100644
+index 0000000..6b02b41
+--- /dev/null
++++ b/src/server.ts
+@@ -0,0 +1,46 @@
++import express from 'express';
++import path from 'path';
++import cors from 'cors';
++import { fileURLToPath } from 'url';
++
++const __filename = fileURLToPath(import.meta.url);
++const __dirname = path.dirname(__filename);
++
++const app = express();
++const PORT = 3000;
++
++// Enable CORS
++app.use(cors());
++
++// Serve static files from site/public
++app.use(express.static(path.join(__dirname, '../site/public')));
++
++// Serve distribution files
++app.use('/distribution', express.static(path.join(__dirname, '../site/distribution')));
++
++// Route all page requests to the pages directory
++app.get('/', (req, res) => {
++  res.sendFile(path.join(__dirname, '../site/public/pages/index.html'));
++});
++
++app.get(['/home', '/home.html'], (req, res) => {
++  res.sendFile(path.join(__dirname, '../site/public/pages/home.html'));
++});
++
++app.get(['/about', '/about.html'], (req, res) => {
++  res.sendFile(path.join(__dirname, '../site/public/pages/about.html'));
++});
++
++app.get(['/contact', '/contact.html'], (req, res) => {
++  res.sendFile(path.join(__dirname, '../site/public/pages/contact.html'));
++});
++
++app.get(['/index', '/index.html'], (req, res) => {
++  res.sendFile(path.join(__dirname, '../site/public/pages/index.html'));
++});
++
++// Start server
++app.listen(PORT, () => {
++  console.log(`Portfolio server running at http://localhost:${PORT}`);
++  console.log(`Serving files from: ${path.join(__dirname, '../site/public')}`);
++});
+diff --git a/tsconfig.server.json b/tsconfig.server.json
+new file mode 100644
+index 0000000..dcf5c44
+--- /dev/null
++++ b/tsconfig.server.json
+@@ -0,0 +1,17 @@
++{
++  "compilerOptions": {
++    "rootDir": "src",
++    "outDir": "dist",
++    "module": "es2020",
++    "target": "es2020",
++    "lib": ["es2020"],
++    "types": ["node"],
++    "moduleResolution": "node",
++    "esModuleInterop": true,
++    "sourceMap": false,
++    "declaration": false,
++    "strict": true,
++    "skipLibCheck": true
++  },
++  "include": ["src"]
++}
+diff --git a/tsconfig.site.json b/tsconfig.site.json
+new file mode 100644
+index 0000000..fc8520e
+--- /dev/null
++++ b/tsconfig.site.json
+@@ -0,0 +1,3 @@
++{
++  "extends": "./tsconfig.json"
++}

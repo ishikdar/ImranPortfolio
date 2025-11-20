@@ -52,7 +52,15 @@ class PortfolioApp {
     try {
       
       // Load data and update all page elements
-      await this.indexService.loadAndRenderIndexPage('../data/personalData.json');
+      // Detect environment and use appropriate path
+      let dataPath = '/data/personalData.json';
+      
+      // Check if running on GitHub Pages
+      if (window.location.hostname.includes('github.io')) {
+        dataPath = '/ImranPortfolio/data/personalData.json';
+      }
+      
+      await this.indexService.loadAndRenderIndexPage(dataPath);
       
     } catch (error) {
       console.log('❌ Home page failed to load:', error);
