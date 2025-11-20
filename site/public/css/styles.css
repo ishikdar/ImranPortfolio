@@ -733,10 +733,17 @@ body {
     min-width: auto;
 }
 
-
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 .info-icon {
     font-size: 20px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .info-text {
@@ -1016,6 +1023,12 @@ body {
     font-size: 24px;
     transition: transform 0.3s ease;
     text-decoration: none;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .social-icon:hover {
@@ -2260,10 +2273,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FF0057;
   border-radius: 12px;
   color: white;
   flex-shrink: 0;
+}
+
+.contact-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes images white to match the design */
 }
 
 .contact-method-info {
@@ -2484,6 +2503,11 @@ body {
     width: 45px;
     height: 45px;
     font-size: 24px;
+  }
+  
+  .contact-icon img {
+    width: 24px;
+    height: 24px;
   }
   
   .availability-info {
