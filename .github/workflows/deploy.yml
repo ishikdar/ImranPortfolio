@@ -97,6 +97,10 @@ jobs:
           ls -la _site/
           echo "HTML files:"
           ls -la _site/*.html
+          echo "JS directory contents:"
+          ls -la _site/js/ || echo "JS directory not found!"
+          echo "Checking home.html script tag:"
+          grep -n "js/" _site/home.html || echo "No JS references found in home.html"
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
