@@ -72,14 +72,24 @@ jobs:
       - name: Fix asset paths in HTML files
         run: |
           echo "Fixing paths in HTML files..."
+          echo "HTML files found:"
+          find _site -name "*.html" -type f
+          echo "Before path fixing - sample from home.html:"
+          if [ -f "_site/home.html" ]; then
+            grep -n "src=" _site/home.html | head -3
+          fi
           # Update CSS paths from ../css/ to css/
-          sed -i 's|../css/|css/|g' _site/*.html
+          find _site -name "*.html" -type f -exec sed -i 's|../css/|css/|g' {} \;
           # Update asset paths from ../assets/ to assets/
-          sed -i 's|../assets/|assets/|g' _site/*.html
+          find _site -name "*.html" -type f -exec sed -i 's|../assets/|assets/|g' {} \;
           # Update JS paths from ../js/ to js/
-          sed -i 's|../js/|js/|g' _site/*.html
+          find _site -name "*.html" -type f -exec sed -i 's|../js/|js/|g' {} \;
           # Fix TypeScript distribution path from ../../distribution/ to distribution/
-          sed -i 's|../../distribution/|distribution/|g' _site/*.html
+          find _site -name "*.html" -type f -exec sed -i 's|../../distribution/|distribution/|g' {} \;
+          echo "After path fixing - sample from home.html:"
+          if [ -f "_site/home.html" ]; then
+            grep -n "src=" _site/home.html | head -3
+          fi
           
       - name: List final build directory
         run: |
