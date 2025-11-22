@@ -38,6 +38,29 @@ body {
     overflow: hidden;
 }
 
+/* Taller displays - ensure decorative squares are visible */
+@media (min-height: 900px) {
+    .decorative-square-1 {
+        bottom: 50px;
+        left: 40px;
+    }
+    
+    .decorative-square-2 {
+        top: 40px;
+        left: 80px;
+    }
+    
+    .decorative-square-3 {
+        top: 90px;
+        right: 60px;
+    }
+    
+    .decorative-square-4 {
+        bottom: 120px;
+        right: 35px;
+    }
+}
+
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -96,14 +119,14 @@ body {
 }
 
 .decorative-square-1 {
-    bottom: 30px;
-    left: 30px;
+    bottom: 35px;
+    left: 35px;
     animation: float 4s ease-in-out infinite;
 }
 
 .decorative-square-2 {
-    top: 20px;
-    left: 60px;
+    top: 25px;
+    left: 65px;
     width: 40px;
     height: 40px;
     border-color: #4facfe;
@@ -111,8 +134,8 @@ body {
 }
 
 .decorative-square-3 {
-    top: 60px;
-    right: 40px;
+    top: 70px;
+    right: 45px;
     width: 35px;
     height: 35px;
     border-color: #764ba2;
@@ -120,8 +143,8 @@ body {
 }
 
 .decorative-square-4 {
-    bottom: 80px;
-    right: 20px;
+    bottom: 90px;
+    right: 25px;
     width: 45px;
     height: 45px;
     border-color: #FF0057;
@@ -480,28 +503,36 @@ body {
         text-align: center;
     }
 
-    /* Hide some decorative squares on small phones (too crowded) */
-    .decorative-square-2,
-    .decorative-square-3 {
-        display: none; /* Hide these to avoid clutter */
-    }
-    
-    /* Make remaining squares smaller */
+    /* Make all decorative squares visible but smaller for phones */
     .decorative-square-1,
+    .decorative-square-2,
+    .decorative-square-3,
     .decorative-square-4 {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
+        opacity: 0.5;
+        z-index: -2; /* Ensure they stay behind image */
     }
     
-    /* Adjust positions for small screens */
+    /* Adjust positions for small screens - bubbly effect around image */
     .decorative-square-1 {
-        bottom: 10px;
-        left: 10px;
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .decorative-square-2 {
+        top: 25px;
+        left: 25px;
+    }
+    
+    .decorative-square-3 {
+        top: 50px;
+        right: 20px;
     }
     
     .decorative-square-4 {
-        bottom: 50px;
-        right: 10px;
+        bottom: 45px;
+        right: 12px;
     }
     
     /* Make doodles smaller */
@@ -529,6 +560,41 @@ body {
    FOR EXTRA TINY PHONES
    Screen size: up to 360px (like small Android phones)
    ------------------ */
+/* iPhone 14 Pro and similar devices */
+@media (max-width: 430px) and (min-width: 390px) {
+    /* Ensure decorative squares are visible and positioned nicely */
+    .decorative-square-1,
+    .decorative-square-2,
+    .decorative-square-3,
+    .decorative-square-4 {
+        width: 32px;
+        height: 32px;
+        opacity: 0.6;
+        z-index: -2;
+    }
+    
+    /* Better positioning for iPhone 14 Pro */
+    .decorative-square-1 {
+        bottom: 20px;
+        left: 18px;
+    }
+    
+    .decorative-square-2 {
+        top: 30px;
+        left: 35px;
+    }
+    
+    .decorative-square-3 {
+        top: 55px;
+        right: 25px;
+    }
+    
+    .decorative-square-4 {
+        bottom: 55px;
+        right: 18px;
+    }
+}
+
 @media (max-width: 360px) {
     /* Make photo extra small */
     .image-wrapper {
