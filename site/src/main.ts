@@ -53,13 +53,22 @@ class PortfolioApp {
       
       // Load data and update all page elements
       // Detect environment and use appropriate path
-      let dataPath = '/data/personalData.json';
+      let dataPath: string;
       
       // Check if running on GitHub Pages
       if (window.location.hostname.includes('github.io')) {
         dataPath = '/ImranPortfolio/data/personalData.json';
+      } 
+      // Check if running on localhost (local server)
+      else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        dataPath = '/data/personalData.json';
+      }
+      // Default for file:// protocol (opening HTML directly)
+      else {
+        dataPath = '../data/personalData.json';
       }
       
+      console.log('🔍 Loading data from:', dataPath);
       await this.indexService.loadAndRenderIndexPage(dataPath);
       
     } catch (error) {
