@@ -144,7 +144,7 @@
       "title": "Test Case Project",
       "description": "Comprehensive manual testing project involving test case creation, execution, and reporting. Created detailed test case reports, test metrics analysis, bug reports, and mind maps for better test coverage visualization.",
       "technologies": ["Test Case Design", "Test Case Report", "Test Metrics", "Bug Report", "Mind Maps", "XMind"],
-      "url": "https://github.com/ishikdar/test-case-project",
+      "url": "https://github.com/ishikdar/Test_Case_Project",
       "featured": true,
       "category": "testing",
       "year": "2024"
@@ -153,7 +153,7 @@
       "title": "API Testing Project",
       "description": "End-to-end API testing project implementing CRUD operations testing with comprehensive data validation, random string generation, integer validation, and API response verification using Postman and Newman.",
       "technologies": ["Postman", "Newman", "API Testing", "CRUD Operations", "Data Validation", "Random String Testing", "Integer Validation"],
-      "url": "https://github.com/ishikdar/api-testing-project",
+      "url": "https://github.com/ishikdar/API_Testing_Project",
       "featured": true,
       "category": "testing",
       "year": "2024"
@@ -162,7 +162,7 @@
       "title": "WebAutomation Project (Selenium with JAVA)",
       "description": "Automated web testing framework using Selenium WebDriver with Java. Implemented test cases for URL navigation, element assertions, dropdown interactions, form validations, and cross-browser compatibility testing.",
       "technologies": ["Java", "Selenium WebDriver", "TestNG", "Maven", "Web Automation", "Cross-browser Testing"],
-      "url": "https://github.com/ishikdar/selenium-java-automation",
+      "url": "https://github.com/ishikdar/WebAutomationPractice",
       "featured": true,
       "category": "automation",
       "year": "2024"
@@ -171,7 +171,7 @@
       "title": "WebAutomation Project (Cypress)",
       "description": "Modern web automation testing suite using Cypress framework. Developed automated test cases for checkbox interactions, dropdown selections, assertions, form submissions, and end-to-end user journey testing.",
       "technologies": ["Cypress", "JavaScript", "Web Automation", "E2E Testing", "Form Testing", "UI Validation"],
-      "url": "https://github.com/ishikdar/cypress-automation",
+      "url": "https://github.com/ishikdar/CypressWebAutomation",
       "featured": true,
       "category": "automation",
       "year": "2024"
