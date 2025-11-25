@@ -21,6 +21,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: #eeeeee;
+    overflow-x: hidden;
 }
 
 .container {
@@ -554,6 +555,17 @@ body {
     .shape-circle-2 {
         width: 50px;
         height: 50px;
+    }
+    
+    .footer-social {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .social-icon img {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -1265,6 +1277,12 @@ body {
     
     .footer-social {
         gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon img {
+        width: 22px;
+        height: 22px;
     }
 }
 
@@ -1595,6 +1613,13 @@ body {
   font-size: 1.5rem;
   margin-right: 20px;
   flex-shrink: 0;
+}
+
+.education-icon-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(70%) contrast(90%);
 }
 
 .education-degree {
@@ -2733,6 +2758,11 @@ body {
     margin-bottom: 15px;
   }
 
+  .education-icon-img {
+    width: 38px;
+    height: 38px;
+  }
+
   .education-details {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -2783,6 +2813,16 @@ body {
   .education-item,
   .certification-item {
     padding: 20px 15px;
+  }
+
+  .education-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .education-icon-img {
+    width: 32px;
+    height: 32px;
   }
 
   .education-degree {
