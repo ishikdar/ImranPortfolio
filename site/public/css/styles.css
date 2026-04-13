@@ -1284,6 +1284,11 @@ body {
         width: 22px;
         height: 22px;
     }
+    
+    .certification-badge-img {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 
@@ -1619,7 +1624,7 @@ body {
   width: 45px;
   height: 45px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(70%) contrast(90%);
+  filter: brightness(0) invert(1);
 }
 
 .education-degree {
@@ -1743,6 +1748,13 @@ body {
   justify-content: center;
   color: white;
   font-size: 1.5rem;
+}
+
+.certification-badge-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .certification-content {
@@ -2842,5 +2854,10 @@ body {
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
+  }
+  
+  .certification-badge-img {
+    width: 28px;
+    height: 28px;
   }
 }

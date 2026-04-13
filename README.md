@@ -57,17 +57,11 @@ npm install
 
 ### Development Commands
 ```bash
-# Start development server with hot reload
-npm run dev
 
 # Build TypeScript to JavaScript
 npm run build
 
 # Start production server
 npm start
-
-# Watch mode for TypeScript compilation
-npm run watch
-```
 
 **Built with ❤️ by Imran** - A Modern, Responsive Portfolio Showcasing 3+ Years of Software Testing Excellence
