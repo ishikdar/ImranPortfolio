@@ -1,8 +1,8 @@
-name: Deploy Portfolio to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,95 +16,37 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
-      - name: Verify source files exist
-        run: |
-          echo "Checking source files..."
-          ls -la site/public/pages/
-          ls -la site/public/css/
-          ls -la site/public/assets/ || echo "Assets directory not found"
-          ls -la site/public/js/
-          ls -la site/public/data/
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      
-      - name: Install dependencies and build TypeScript
-        run: |
-          npm install
-          npm run build
-          echo "TypeScript compiled successfully"
-          ls -la site/distribution/
-          
-      - name: Copy files to build directory
+          node-version: '20'
+
+      - name: Install and build
+        run: npm ci && npm run build
+
+      - name: Assemble site
         run: |
           mkdir -p _site
-          echo "Copying HTML pages..."
           cp -r site/public/pages/* _site/
-          echo "Copying CSS..."
-          cp -r site/public/css _site/
-          echo "Copying JS..."
-          cp -r site/public/js _site/
-          echo "Copying data..."
-          cp -r site/public/data _site/
-          echo "Copying compiled TypeScript (distribution)..."
+          cp -r site/public/{css,js,data} _site/
           cp -r site/distribution _site/
-          echo "Copying assets..."
-          if [ -d "site/public/assets" ]; then
-            cp -r site/public/assets _site/
-          else
-            mkdir -p _site/assets
-            echo "Assets directory created"
-          fi
-          
-      - name: Fix asset paths in HTML files
-        run: |
-          echo "Fixing paths in HTML files..."
-          echo "HTML files found:"
-          find _site -name "*.html" -type f
-          echo "Before path fixing - sample from home.html:"
-          if [ -f "_site/home.html" ]; then
-            grep -n "src=" _site/home.html | head -3
-          fi
-          # Update CSS paths from ../css/ to css/
-          find _site -name "*.html" -type f -exec sed -i 's|../css/|css/|g' {} \;
-          # Update asset paths from ../assets/ to assets/
-          find _site -name "*.html" -type f -exec sed -i 's|../assets/|assets/|g' {} \;
-          # Update JS paths from ../js/ to js/
-          find _site -name "*.html" -type f -exec sed -i 's|../js/|js/|g' {} \;
-          # Fix TypeScript distribution path from ../../distribution/ to distribution/
-          find _site -name "*.html" -type f -exec sed -i 's|../../distribution/|distribution/|g' {} \;
-          echo "After path fixing - sample from home.html:"
-          if [ -f "_site/home.html" ]; then
-            grep -n "src=" _site/home.html | head -3
-          fi
-          
-      - name: List final build directory
-        run: |
-          echo "Final build directory contents:"
-          ls -la _site/
-          echo "HTML files:"
-          ls -la _site/*.html
-          echo "JS directory contents:"
-          ls -la _site/js/ || echo "JS directory not found!"
-          echo "Checking home.html script tag:"
-          grep -n "js/" _site/home.html || echo "No JS references found in home.html"
-          
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        
-      - name: Deploy to GitHub Pages
+          cp -r site/public/assets _site/ 2>/dev/null || mkdir -p _site/assets
+          find _site -name "*.html" -exec sed -i \
+            -e 's|../css/|css/|g' \
+            -e 's|../assets/|assets/|g' \
+            -e 's|../js/|js/|g' \
+            -e 's|../../distribution/|distribution/|g' {} \;
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
